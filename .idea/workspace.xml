@@ -4,126 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="initial react app">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]2/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/.eslintrc.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/public/factory_logo.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/public/factory_logo_16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/public/factory_logo_192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/public/factory_logo_32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/public/factory_logo_512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/AppRouter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/logo/factory_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/logo/factory_logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/vite-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/tsconfig.node.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/freelancer.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/Eagle Export Tutorial.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/Exporting Gerber files with Circuit maker.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/The Factory Sponsorship Proposal.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/google1ebc93ab42c37883.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Ecsess-Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/EcsessV2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/EcsessV2pn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Office Hours.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/factoryInline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/factoryInlineW.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mcgill-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/cabin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/cake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/circus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/game.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/safe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/submarine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/contact_me.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/freelancer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/freelancer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jqBootstrapValidation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/less/freelancer.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail/contact_me.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ressources.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/animated.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/bordered-pulled.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/fixed-width.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/font-awesome.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/icons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/larger.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/path.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/rotated-flipped.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/screen-reader.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/stacked.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_animated.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_fixed-width.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_icons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_larger.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_path.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_screen-reader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_stacked.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/font-awesome.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.min.js" beforeDir="false" />
+    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="Very basic react app">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +74,7 @@
       <updated>1702860427188</updated>
       <workItem from="1702860428904" duration="1921000" />
       <workItem from="1702862486949" duration="12583000" />
-      <workItem from="1703193271537" duration="3139000" />
+      <workItem from="1703193271537" duration="4908000" />
     </task>
     <task id="LOCAL-00001" summary="initial react app">
       <option name="closed" value="true" />
@@ -199,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702860879253</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Very basic react app">
+      <option name="closed" value="true" />
+      <created>1703197080647</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703197080647</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +111,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial react app" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial react app" />
+    <MESSAGE value="Very basic react app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Very basic react app" />
   </component>
 </project>

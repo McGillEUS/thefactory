@@ -12,9 +12,9 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = [
     {name: 'Home', url: '/'},
-    {name: 'Office Hours', url: 'office-hours'},
-    {name: 'Workshops', url: 'workshops'},
-    {name: 'Resources', url: 'resources'}
+    {name: 'Office Hours', url: '/office-hours'},
+    {name: 'Workshops', url: '/workshops'},
+    {name: 'Resources', url: '/resources'}
 ];
 
 function NavBar() {
@@ -34,7 +34,7 @@ function NavBar() {
             boxShadow: 'none',
             alignContent: 'start',
             margin: 0,
-            padding: '2rem 0 2rem 0',
+            padding: '.75rem 0 .75rem 0',
         }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
