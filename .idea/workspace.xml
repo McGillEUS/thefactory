@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="Very basic react app">
+    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="small cosmetic changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage/OfficeHoursPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage/ResourcesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage/WorkshopsPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +65,12 @@
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/assets/logo" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/public" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -74,7 +82,7 @@
       <updated>1702860427188</updated>
       <workItem from="1702860428904" duration="1921000" />
       <workItem from="1702862486949" duration="12583000" />
-      <workItem from="1703193271537" duration="4908000" />
+      <workItem from="1703193271537" duration="6103000" />
     </task>
     <task id="LOCAL-00001" summary="initial react app">
       <option name="closed" value="true" />
@@ -92,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703197080647</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="small cosmetic changes">
+      <option name="closed" value="true" />
+      <created>1703263139368</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703263139368</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial react app" />
     <MESSAGE value="Very basic react app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Very basic react app" />
+    <MESSAGE value="small cosmetic changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small cosmetic changes" />
   </component>
 </project>
