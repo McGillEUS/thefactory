@@ -4,16 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="folder changes">
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/logo/factory_logo_inline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/logo/factory_logo_inline_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/utils/theme.ts" afterDir="false" />
+    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="add basic theme">
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHours/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHours/officeHours.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/resources.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Workshops/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Workshops/workshops.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/router.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/utils/AppRouter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon/FactoryIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar/NavBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage/OfficeHoursPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHours/OfficeHours.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage/ResourcesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/Resources.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage/WorkshopsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Workshops/Workshops.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/utils/AppRouter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/utils/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/theme/theme.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -31,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="home-page" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,33 +62,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/src/assets/logo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/src/assets/logo",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/assets/logo" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/utils" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage" />
-      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage" />
-      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage" />
-      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -87,7 +102,7 @@
       <updated>1702860427188</updated>
       <workItem from="1702860428904" duration="1921000" />
       <workItem from="1702862486949" duration="12583000" />
-      <workItem from="1703193271537" duration="10477000" />
+      <workItem from="1703193271537" duration="12625000" />
     </task>
     <task id="LOCAL-00001" summary="initial react app">
       <option name="closed" value="true" />
@@ -121,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703263732383</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add basic theme">
+      <option name="closed" value="true" />
+      <created>1703273485815</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703273485815</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +166,7 @@
     <MESSAGE value="Very basic react app" />
     <MESSAGE value="small cosmetic changes" />
     <MESSAGE value="folder changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="folder changes" />
+    <MESSAGE value="add basic theme" />
+    <option name="LAST_COMMIT_MESSAGE" value="add basic theme" />
   </component>
 </project>

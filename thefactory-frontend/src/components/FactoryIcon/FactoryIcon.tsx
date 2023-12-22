@@ -1,6 +1,6 @@
 import {createSvgIcon} from "@mui/material";
 
-const FactoryIcon = createSvgIcon(
+export const FactoryIcon = createSvgIcon(
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
          width="270.000000pt" height="249.000000pt" viewBox="0 0 270.000000 249.000000"
          preserveAspectRatio="xMidYMid meet">
@@ -62,6 +62,3 @@ l29 -31 327 -14 c180 -7 355 -16 390 -19 l62 -6 0 -139 c0 -178 -18 -187 -22
     </svg>,
     'FactoryIcon'
 );
-
-
-export default FactoryIcon;
