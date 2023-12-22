@@ -1,8 +1,8 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import ResourcesPage from "./pages/ResourcesPage/ResourcesPage.tsx";
-import WorkshopsPage from "./pages/WorkshopsPage/WorkshopsPage.tsx";
-import OfficeHoursPage from "./pages/OfficeHoursPage/OfficeHoursPage.tsx";
-import HomePage from "./pages/HomePage/HomePage.tsx";
+import ResourcesPage from "../pages/ResourcesPage/ResourcesPage.tsx";
+import WorkshopsPage from "../pages/WorkshopsPage/WorkshopsPage.tsx";
+import OfficeHoursPage from "../pages/OfficeHoursPage/OfficeHoursPage.tsx";
+import HomePage from "../pages/HomePage/HomePage.tsx";
 
 function AppRouter() {
     return (

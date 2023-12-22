@@ -30,43 +30,23 @@ function NavBar() {
 
     return (
         <AppBar position="static" style={{
-            background: '#2C3E50',
-            boxShadow: 'none',
-            alignContent: 'start',
             margin: 0,
-            padding: '.75rem 0 .75rem 0',
+            padding: '.75rem 0 .25rem 0',
         }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box
                         component="img"
-                        src={'src/assets/logo/factory_logo.png'}
+                        src={'src/assets/logo/factory_logo_inline_white.png'}
                         alt={'Factory Logo'}
                         sx={{
                             height: '3rem',
                             marginRight: '0.5rem',
-                            translate: '0 -0.5rem',
+                            translate: '0 -0.7rem',
                             display: {xs: 'none', md: 'flex'},
                         }}
                     />
-                    <Typography
-                        variant="h4"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: {xs: 'none', md: 'flex'},
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.1rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
 
-                        }}
-                    >
-                        The Factory
-                    </Typography>
 
                     <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
                         <IconButton
@@ -105,33 +85,15 @@ function NavBar() {
                         </Menu>
                     </Box>
                     <Box component="img"
-                         src={'src/assets/logo/factory_logo.png'}
+                         src={'src/assets/logo/factory_logo_inline_white.png'}
                          alt={'Factory Logo'}
                          sx={{
                              height: '3rem',
                              marginRight: '0.5rem',
-                             translate: '0 -0.5rem',
+                             translate: '0 -0.6rem',
                              display: {xs: 'flex', md: 'none'},
                          }}
                     />
-                    <Typography
-                        variant="h4"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: {xs: 'flex', md: 'none'},
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.1rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        The Factory
-                    </Typography>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                         {pages.map((page) => (
                             <Button

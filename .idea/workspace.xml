@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="small cosmetic changes">
+    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="folder changes">
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/logo/factory_logo_inline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/logo/factory_logo_inline_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/utils/theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/AppRouter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage/OfficeHoursPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage/ResourcesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage/WorkshopsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/utils/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -66,6 +70,7 @@
       <recent name="$PROJECT_DIR$/thefactory-frontend/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/utils" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage" />
@@ -82,7 +87,7 @@
       <updated>1702860427188</updated>
       <workItem from="1702860428904" duration="1921000" />
       <workItem from="1702862486949" duration="12583000" />
-      <workItem from="1703193271537" duration="6103000" />
+      <workItem from="1703193271537" duration="10477000" />
     </task>
     <task id="LOCAL-00001" summary="initial react app">
       <option name="closed" value="true" />
@@ -108,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703263139368</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="folder changes">
+      <option name="closed" value="true" />
+      <created>1703263732383</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703263732383</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +142,7 @@
     <MESSAGE value="initial react app" />
     <MESSAGE value="Very basic react app" />
     <MESSAGE value="small cosmetic changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small cosmetic changes" />
+    <MESSAGE value="folder changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="folder changes" />
   </component>
 </project>
