@@ -4,29 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="add basic theme">
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHours/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHours/officeHours.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/resources.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Workshops/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Workshops/workshops.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/router.tsx" afterDir="false" />
+    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="Change file structure">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon/FactoryIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/HomePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHoursPage/OfficeHoursPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHours/OfficeHours.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/ResourcesPage/ResourcesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/Resources.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage/WorkshopsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Workshops/Workshops.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/utils/AppRouter.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/utils/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/theme/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +83,7 @@
       <updated>1702860427188</updated>
       <workItem from="1702860428904" duration="1921000" />
       <workItem from="1702862486949" duration="12583000" />
-      <workItem from="1703193271537" duration="12625000" />
+      <workItem from="1703193271537" duration="12881000" />
     </task>
     <task id="LOCAL-00001" summary="initial react app">
       <option name="closed" value="true" />
@@ -144,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703273485815</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change file structure">
+      <option name="closed" value="true" />
+      <created>1703275713251</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703275713251</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +156,7 @@
     <MESSAGE value="small cosmetic changes" />
     <MESSAGE value="folder changes" />
     <MESSAGE value="add basic theme" />
-    <option name="LAST_COMMIT_MESSAGE" value="add basic theme" />
+    <MESSAGE value="Change file structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change file structure" />
   </component>
 </project>
