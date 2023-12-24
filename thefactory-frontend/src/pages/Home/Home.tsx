@@ -1,7 +1,11 @@
+import About from "./Content/About.tsx";
+import Membership from "./Content/Membership.tsx";
+
 export function Home() {
     return (
           <div>
-                <h1>Home Page</h1>
+              <About />
+              <Membership />
           </div>
     );
 }

@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="readme">
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/Footer/index.ts" afterDir="false" />
+    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="Add footer">
       <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Content/About.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Content/Contact.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Content/Membership.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Content/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703275883789</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add footer">
+      <option name="closed" value="true" />
+      <created>1703434770102</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703434770102</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +178,7 @@
     <MESSAGE value="add basic theme" />
     <MESSAGE value="Change file structure" />
     <MESSAGE value="readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <MESSAGE value="Add footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add footer" />
   </component>
 </project>
