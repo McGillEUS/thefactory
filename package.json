@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.160",
+    "mammoth": "^1.6.0",
+    "react-doc-viewer": "^0.1.5"
+  }
+}
