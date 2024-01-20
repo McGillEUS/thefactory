@@ -5,16 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="readme">
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/Footer/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Content/About.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Content/Contact.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Content/Membership.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/resources/pcb_logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/resources/printing3d_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/resources/soldering_logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/assets/resources/workshops_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/MainPageContent/InfoBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/MainPageContent/Pcb.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/MainPageContent/Printing3D.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/MainPageContent/Soldering.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/MainPageContent/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/PcbPage/PcbResources.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/PcbPage/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/Printing3DPage/Printing3DResources.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/Printing3DPage/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/SolderingPage/SolderingResources.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/SolderingPage/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]2/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/Resources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/pages/Resources/Resources.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thefactory-frontend/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/thefactory-frontend/src/router.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +41,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="home-page" />
+        <entry key="$PROJECT_DIR$" value="Natalia" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,34 +66,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/src/assets/logo&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/src/assets/logo",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\allis\\IdeaProjects\\Factory\\thefactory\\thefactory-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/assets/logo" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\allis\IdeaProjects\Factory\thefactory\thefactory-frontend\src\assets\resources" />
+      <recent name="C:\Users\allis\IdeaProjects\Factory\thefactory\thefactory-frontend\src\pages\Resources\Content" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/components/FactoryIcon" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src/components/NavBar" />
       <recent name="$PROJECT_DIR$/thefactory-frontend/src" />
-      <recent name="$PROJECT_DIR$/thefactory-frontend/src/utils" />
-      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/WorkshopsPage" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -91,6 +110,9 @@
       <workItem from="1702860428904" duration="1921000" />
       <workItem from="1702862486949" duration="12583000" />
       <workItem from="1703193271537" duration="13948000" />
+      <workItem from="1705456168943" duration="1143000" />
+      <workItem from="1705457336280" duration="246000" />
+      <workItem from="1705457594993" duration="10913000" />
     </task>
     <task id="LOCAL-00001" summary="initial react app">
       <option name="closed" value="true" />
