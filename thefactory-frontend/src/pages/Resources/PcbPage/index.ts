@@ -1,0 +1,1 @@
+export { PcbResources } from './PcbResources';
