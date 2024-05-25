@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: solid hotpink; */
+}
+/* ------------------Parent styles------------------- */
+
+.page{
+    height:380vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Base Grid Layout for Small Screens */
+.grid-container {
+    display: grid;
+    margin: 40px;
+    grid-template-columns: repeat(4, minmax(240px, 1fr)); /* Adjusts number of columns based on available width */
+    grid-gap: 20px;
+}
+
+.timetable{
+    width: 60vw;
+    margin-top: 35px;
+}
+
+
+.search-bar{
+    position: relative;
+    top:50px;
+    margin-bottom: 90px;
+    border-radius: 20px;
+    width: 50%;
+    height: 50px;
+    font-size: 1.1rem;
+}
+
+.card {
+    width: 230px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+    border: 1px solid #ccc; /* Optional: for card border */
+    border-radius: 15px;
+    overflow: hidden; /* Ensures the content does not overflow */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; 
+    
+}
+
+
+
+.card:hover{
+    transform: scale(1.06);
+}
+
+.card-image {
+    height: 60%; /* Assign half of the card's height to the image */
+    width: 100%; /* Image container takes full width */
+}
+
+.card-image img {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    height: 100%; /* Ensures the image takes the full height of its container */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    overflow: hidden;
+    object-position: 40% 35%; 
+    
+}
+
+.card-text {
+    height: 40%; /* Assign the remaining half to the text */
+    padding: 10px; /* Adds some padding inside the text container */
+    display: flex;
+    background-color: #2c3e50;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.card-text h3{
+    font-size: 1rem;
+    color: white;
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Distance from the top of the container */
+    left: 10px; /* Distance from the left of the container */
+
+}
+
+.major{
+    font-size: 0.6rem;
+    color: white;
+    position: absolute;
+    top:40px;
+
+}
+.skills {
+    font-size: 0.8rem;
+    color: white;
+    position: absolute;
+    top:63px;
+}
+
+.card-text ul{
+    font-size: 0.6rem;
+    color: white;
+    position: absolute;
+    top:85px;
+    left:-5px
+}
+
+
+
+
+
+@media (min-width:1200px){
+    
+
+    .flip-card {
+        perspective: 1000px;
+        width: 230px; /* Adjust to match your existing card size */
+        height: 300px; /* Adjust to match your existing card size */
+    }
+    
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 1.2s;
+        transform-style: preserve-3d;
+    }
+    
+    /* Flip the inner card when its parent is hovered */
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Hide the back side of the card when flipped */
+        backface-visibility: hidden;
+        border-radius: 15px; /* Match your existing border-radius */
+        overflow: hidden; /* Ensures the content does not overflow */
+    }
+    
+    .flip-card-back {
+        background-color: #2c3e50; /* Match your existing card background */
+        color: white;
+        transform: rotateY(180deg);
+    }
+    }
+
+
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .page{
+        height:800vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+}
+
+
+/* Larger Screens: 2 Columns */
+@media (max-width:950px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .page{
+        height:800vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timetable{
+        width: 85vw;
+        margin-top: 35px;
+    }
+    .search-bar{
+        position: relative;
+        top:50px;
+        margin-bottom: 90px;
+        border-radius: 20px;
+        width: 70%;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+
+    .card {
+        width: 160px; /* Adjust the width as needed */
+        height: 200px; /* Adjust the height as needed */
+        border: 1px solid #ccc; /* Optional: for card border */
+        border-radius: 15px;
+        overflow: hidden; /* Ensures the content does not overflow */
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease; 
+    }
+
+ 
+
+
+
+  
+
+ 
+
+}
+
+
+
+/* Larger Screens: 2 Columns */
+@media (max-width: 650px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .page{
+        height:800vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+
+
+
+
