@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="merge conflicts">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2b8da5e0-9628-46a9-abc9-5d2aedd31811.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2b8da5e0-9628-46a9-abc9-5d2aedd31811/storage_v2/_src_/database/factory.CjHrvg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2b8da5e0-9628-46a9-abc9-5d2aedd31811/storage_v2/_src_/database/factory.CjHrvg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_TheFactoryBackend.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Test_TheFactoryBackend.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/TheFactoryBackendApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/config/SecurityFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/config/YamlConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/PersonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/WorkshopController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/dtos/NewPersonDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/dtos/NewRentalTransactionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/dtos/RentalTransactionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/dtos/WorkshopDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/mappers/PersonMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/mappers/RentalTransactionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/mappers/WorkshopMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/factory/YamlPropertySourceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/PersonDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/PurchaseTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/RentalTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/Workshop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/model/enums/ItemCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/ItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/LocationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/PurchaseTransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/RentalTransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/TransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/repositories/WorkshopRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/security/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/security/Principal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/security/authentication/SuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/IdentityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/ItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/LocationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/PersonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/RentalTransactionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/WorkshopService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/test/api/workshop/workshop.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/TheFactoryBackendApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/controllers/mappers/RentalTransactionMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/controllers/mappers/WorkshopMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/services/RentalTransactionServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/services/WorkshopServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/.eslintrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/bun.lockb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/public/factory_logo.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/public/factory_logo_16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/public/factory_logo_192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/public/factory_logo_32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/public/factory_logo_512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/assets/logo/factory_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/assets/logo/factory_logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/FactoryIcon/FactoryIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/FactoryIcon/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/Footer/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/NavBar/NavBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/NavBar/NavBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/NavBar/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/components/PageSection/PageSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/model/ManagerDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/model/WorkshopDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/Content/About.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/Content/LearnMore.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/Content/LearnMoreBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/Content/Membership.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/Content/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Home/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Inventory/Inventory.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Inventory/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Inventory/inventory.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Login/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Login/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Login/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Manager/Manager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/Content/ManagerCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/Content/ManagerInfo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/Content/ManagerSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/Content/WeekView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/Content/WeekViewSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/OfficeHours.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/OfficeHours/officeHours.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Resources/Resources.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Resources/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Resources/resources.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/Content/AddWorkshop.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/Content/PastWorkshops.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/Content/UpcomingWorkshops.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/Content/WorkshopAccordion.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/Content/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/Workshops.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/pages/Workshops/workshops.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/router.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/state/GlobalState.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/state/UserState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/theme/theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/src/vite-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/theFactory-frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/theFactory-frontend/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thefactory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/freelancer.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/Eagle Export Tutorial.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/Exporting Gerber files with Circuit maker.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/The Factory Sponsorship Proposal.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google1ebc93ab42c37883.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Ecsess-Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/EcsessV2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/EcsessV2pn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/Office Hours.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/factoryInline.png" beforeDir="false" afterPath="$PROJECT_DIR$/theFactory-frontend/src/assets/logo/factory_logo_inline.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/factoryInlineW.png" beforeDir="false" afterPath="$PROJECT_DIR$/theFactory-frontend/src/assets/logo/factory_logo_inline_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mcgill-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/cabin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/cake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/circus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/game.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/safe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/submarine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/contact_me.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/freelancer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/freelancer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jqBootstrapValidation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/less/freelancer.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail/contact_me.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/font-awesome/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.min.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="HTTP Request" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTTP Private Environment File" />
+        <option value="Class" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mathieugeoffroy052&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:mcgill-ecsess/thefactory.git&quot;,
+    &quot;accountId&quot;: &quot;733978d5-f433-49ea-b187-61c2d7247956&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/theFactory-frontend/node_modules/@mui/material/Grid/Grid.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/theFactory-frontend/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="JvmLoggingSettingsStorage">
+    <option name="loggerId" value="Lombok Slf4j" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2gygAve3zdE8fDo3zq2iBTxNhGG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.Run TheFactoryBackend | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.Run TheFactoryBackend | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.Run TheFactoryBackend | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.workshop | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.workshop | GET request to example server.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.lombok-1.18.32.jar.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RentalTransactionMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RentalTransactionMapperTest.testRentalTransactionsToDTOs.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RentalTransactionServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RentalTransactionServiceTest.testCreateNewRental_EmptyItemIds_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RentalTransactionServiceTest.testCreateNewRental_ValidDTO_ReturnsRentalTransactionDTO.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.RentalTransactionServiceTest.testGetTransactionById_ValidId_ReturnsRentalTransactionDTO.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.Test TheFactoryBackend.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TheFactoryBackendApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WorkshopMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WorkshopServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WorkshopServiceTest.getWorkshopById_returnsWorkshopDTO.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.theFactory-backend [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.theFactory-backend [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.thefactory [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.thefactory [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Run TheFactoryBackend.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.TheFactoryBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop2&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/thefactory-frontend/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/mathieugeoffroy/Library/Mobile Documents/com~apple~CloudDocs/Personal/McGill/Factory/thefactory/theFactory-frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thefactory-frontend/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/theFactory-frontend/src/state" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src/pages/OfficeHours" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/public" />
+      <recent name="$PROJECT_DIR$/thefactory-frontend/src" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ca.theFactory_backend.security" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ca.theFactory_backend.controllers.mappers" />
+      <recent name="ca.theFactory_backend.services" />
+      <recent name="ca.theFactory_backend.model.mappers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Run TheFactoryBackend">
+    <configuration default="true" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" environment="&lt;No Environment&gt;" path="">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="thefactory [install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="install" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.Test TheFactoryBackend" />
+      <item itemvalue="Maven.thefactory [install]" />
+      <item itemvalue="Spring Boot.Run TheFactoryBackend" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1af4296d-0d6c-40e0-8e9c-9f3ef0d59b4b" name="Changes" comment="merge conflicts" />
+      <created>1716675092825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716675092825</updated>
+      <workItem from="1716675094102" duration="22760000" />
+      <workItem from="1716755890924" duration="895000" />
+      <workItem from="1716757078018" duration="16000" />
+      <workItem from="1716757098020" duration="23087000" />
+      <workItem from="1717165377073" duration="317000" />
+      <workItem from="1717165740156" duration="9443000" />
+      <workItem from="1717177188789" duration="10275000" />
+      <workItem from="1717295882297" duration="1396000" />
+      <workItem from="1717421910500" duration="2553000" />
+      <workItem from="1717424472556" duration="26803000" />
+      <workItem from="1717630909661" duration="26000" />
+      <workItem from="1717630947191" duration="139000" />
+      <workItem from="1717685519421" duration="14155000" />
+      <workItem from="1717791834138" duration="22536000" />
+      <workItem from="1717965295721" duration="5420000" />
+      <workItem from="1718587559284" duration="34000" />
+      <workItem from="1718587603582" duration="8775000" />
+      <workItem from="1718808855719" duration="951000" />
+      <workItem from="1718809822587" duration="12085000" />
+      <workItem from="1719097105281" duration="17000" />
+      <workItem from="1719097133764" duration="61851000" />
+      <workItem from="1722009405853" duration="1485000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/services/WorkshopServiceTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/services/WorkshopService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/services/RentalTransactionServiceTest.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/theFactory-backend/src/test/java/ca/theFactory_backend/controllers/mappers/RentalTransactionMapperTest.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/controllers/PersonController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/theFactory-backend/src/main/java/ca/theFactory_backend/config/SecurityFilter.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/thefactory$RentalTransactionServiceTest_testCreateNewRental_ValidDTO_ReturnsRentalTransactionDTO.ic" NAME="RentalTransactionServiceTest.testCreateNewRental_ValidDTO_ReturnsRentalTransactionDTO Coverage Results" MODIFIED="1717439220538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ca.theFactory_backend.services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/thefactory$Test_TheFactoryBackend.ic" NAME="Test TheFactoryBackend Coverage Results" MODIFIED="1717439493047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ca.theFactory_backend.*</FILTER>
+      <EXCLUDED_FILTER>ca.theFactory_backend.model.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>ca.theFactory_backend.controllers.dtos.*</EXCLUDED_FILTER>
+    </SUITE>
+  </component>
+</project>

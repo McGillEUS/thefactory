@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run TheFactoryBackend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="theFactory-backend" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="ca.theFactory_backend.TheFactoryBackendApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

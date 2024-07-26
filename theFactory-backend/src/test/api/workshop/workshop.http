@@ -1,0 +1,12 @@
+### GET request to example server
+POST http://localhost:8080/api/workshops/new HTTP/1.1
+Authorization: Basic admin password
+Content-Type: application/json
+
+{"name": "new workshop", "description": "new workshop description", "location": "new workshop location", "date": "2021-12-12 12:00:00"}
+
+###
+
+
+GET localhost:8080/api/workshops/new HTTP/1.1
+Authorization: Basic admin password
