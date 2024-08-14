@@ -8,7 +8,11 @@ export default {
     extend: {
       colors : {
         "factory-blue" : "#2c3e50",
-        "factory-green" : "#57bf94"
+        "factory-green" : "#57bf94",
+        "factory-black" : "#2C3139",
+      },
+      fontFamily : {
+        'outfit' : ["Outfit", "sans-serif"]
       }
 
     },
