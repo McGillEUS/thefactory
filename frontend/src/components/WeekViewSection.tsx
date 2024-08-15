@@ -9,10 +9,12 @@ export function WeekViewSection() {
 
     const dayHours = [
         {
-            name: 'John',
+            name: 'Tom',
             start: new Date(2021, 1, 1, 8, 0),
             end: new Date(2021, 1, 1, 9, 30)
         },
+        
+
         {
             name: 'Jane',
             start: new Date(2021, 1, 1, 9, 30),

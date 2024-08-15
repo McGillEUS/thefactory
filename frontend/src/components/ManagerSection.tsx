@@ -1,14 +1,12 @@
 import Typography from "@mui/material/Typography";
 import {Divider, Grid} from "@mui/material";
 import Box from "@mui/material/Box";
-import {useTheme} from "@mui/material/styles";
 import ManagerCard from "./ManagerCard.tsx";
 import {useState} from "react";
 import ManagerInfo from "./ManagerInfo.tsx";
 import { FactoryManager } from "../types/FactoryManager.ts";
 
 export function ManagerSection() {
-    const theme = useTheme();
     const [open, setOpen] = useState(false);
     const [selectedManager, setSelectedManager] = useState<FactoryManager | null>(null);
     const steeringCommittee: FactoryManager[] = [
@@ -137,13 +135,13 @@ export function ManagerSection() {
     return (
         <Box
             className="py-10 px-8 flex flex-col basis-full items-center"
-            bgcolor={theme.palette.primary.main}
-            color={theme.palette.common.white}
+            bgcolor='#2C3139'
+            color='#FFFFFF'
         >
             <Typography variant="h2" className="self-center ">Managers</Typography>
             <Divider aria-hidden="true" sx={{
                 opacity: 1,
-                borderColor: theme.palette.common.white,
+                borderColor: '#FFFFFF',
                 borderWidth: 2,
                 width: '10%',
                 alignSelf: 'center',

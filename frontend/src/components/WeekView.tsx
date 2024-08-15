@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import {Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {useTheme} from "@mui/material/styles";
 import ManagerInfo from "./ManagerInfo.tsx";
 import {useState} from "react";
 import { FactoryManager } from "../types/FactoryManager.ts";
@@ -12,7 +11,6 @@ export default function WeekView(props: {
     startTime: Date,
     endTime: Date,
 }) {
-    const theme = useTheme();
     const numHourSlots = calcHourSlots(props.startTime, props.endTime);
     const num30MinSlots = calc30MinSlots(props.startTime, props.endTime);
     const [open, setOpen] = useState(false);
@@ -80,15 +78,15 @@ export default function WeekView(props: {
                                     <Box
                                         onClick={() => selectManager()}
                                         sx={{
-                                            backgroundColor: theme.palette.secondary.main,
-                                            color: theme.palette.common.white,
+                                            backgroundColor: "#61c299",
+                                            color: '#FFFFFF',
                                             borderRadius: '0.15rem',
                                             paddingX: '0.5rem',
                                             paddingY: '0.25rem',
                                             height: '100%',
                                             transition: 'all ease-in-out 0.1s',
                                             '&:hover': {
-                                                backgroundColor: theme.palette.secondary.light,
+                                                backgroundColor: '#77d1ab',
                                                 transform: 'scale(1.009)',
                                                 cursor: 'pointer',
                                             }

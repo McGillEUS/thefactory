@@ -1,4 +1,3 @@
-import {useTheme} from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import {Avatar, Link} from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -8,7 +7,7 @@ export default function ManagerCard(props: {
     manager: FactoryManager,
     onClick: (managerDTO: FactoryManager) => void
 }) {
-    const theme = useTheme();
+    
 
     return (
         <Box className="flex flex-col items-center p-4"
@@ -24,7 +23,7 @@ export default function ManagerCard(props: {
             <Typography variant="caption" className="text-center">{props.manager.position}</Typography>
             <Link
                 className="text-center"
-                color={theme.palette.secondary.main}
+                color='#57bf94'
                 underline="hover"
                 onClick={() => props.onClick(props.manager)}
             >
