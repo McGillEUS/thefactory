@@ -38,6 +38,15 @@ function Home() {
             <iframe width="560" height="315" src="https://www.youtube.com/embed/H-EEBm-rxqw?si=X_x06NfcIzyQxJbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div className="flex flex-col items-center gap-4">
                 <h3 className="text-center text-2xl">FAQ</h3>
+                <Divider aria-hidden="true" sx={{
+                opacity: 1,
+                borderColor: 'white',
+                borderWidth: 2,
+                width: '10%',
+                alignSelf: 'center',
+                marginTop: '0rem',
+                marginBottom: '0.5rem',
+            }}/>
                 <p>"I'm not in ECSE, can I still be a member of the Factory?</p>
                 <p>"Do I have to be a member to use the Factory? Even for just a once-off use?"</p>
                 <p>"I need to use the Factory for a class project, is that okay?"</p>

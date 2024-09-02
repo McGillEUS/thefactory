@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ManagerSection } from "../components/ManagerSection";
 import { WeekViewSection } from "../components/WeekViewSection";
 import { FactoryManager } from "../types/FactoryManager";
@@ -5,9 +6,29 @@ import { FactoryManager } from "../types/FactoryManager";
 
 
 function OfficeHours() {
+
+
+    const [managers, setManagers] = useState<FactoryManager[]>([]);
+
+    console.log(managers)
+
+
+    useEffect(() => {
+        fetch("http://localhost:1337/api/managers" +
+      "?populate=*", {
+          method: "GET",
+
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            setManagers(data.data);
+          })
+          .catch((error) => console.log(error));
+      }, []);
+
     return (  
         <>
-        <WeekViewSection/>
+        <WeekViewSection managers={managers}/>
         <ManagerSection/>
         </>
     );

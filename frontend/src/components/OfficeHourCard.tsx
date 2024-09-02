@@ -3,7 +3,6 @@
 type OfficeHourCardProps = {
     name:string;
     startTime: string;
-    end
 }
 
 

@@ -2,8 +2,30 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {Divider} from "@mui/material";
 import WeekView from "./WeekView.tsx"
+import { FactoryManager } from "../types/FactoryManager.ts";
 
-export function WeekViewSection() {
+type WeekViewSectionProps = {
+    managers: FactoryManager[];
+}
+
+
+
+
+
+
+export function WeekViewSection(props:WeekViewSectionProps) {
+
+    //Now need to do some data processing to filter the managers into the right days
+
+    
+    let mondayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Monday");
+    let tuesdayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Tuesday");
+    let wednesdayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Wednesday");
+    let thursdayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Thursday");
+    let fridayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Friday");
+
+
+
     
     const mondayHours = [
         {
@@ -144,12 +166,12 @@ export function WeekViewSection() {
        
     ]
 
-    const officeHours: { [key: string]: { name: string, start: Date, end: Date }[] } = {
-        'Monday': mondayHours,
-        'Tuesday': tuesdayHours,
-        'Wednesday': wednesdayHours,
-        'Thursday': thursdayHours,
-        'Friday': fridayHours,
+    const officeHours: { [key: string]: FactoryManager[] } = {
+        'Monday': mondayManagers,
+        'Tuesday': tuesdayManagers,
+        'Wednesday': wednesdayManagers,
+        'Thursday': thursdayManagers,
+        'Friday': fridayManagers
     }
 
     return (

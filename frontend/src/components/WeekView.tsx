@@ -6,7 +6,7 @@ import {useState} from "react";
 import { FactoryManager } from "../types/FactoryManager.ts";
 
 export default function WeekView(props: {
-    officeHours: { [key: string]: { name: string, start: Date, end: Date }[] },
+    officeHours: { [key: string]: FactoryManager[] },
     calendarHeight: string,
     startTime: Date,
     endTime: Date,
@@ -15,6 +15,20 @@ export default function WeekView(props: {
     const num30MinSlots = calc30MinSlots(props.startTime, props.endTime);
     const [open, setOpen] = useState(false);
     const [selectedManager, setSelectedManager] = useState<FactoryManager | null>(null);
+
+
+function convertTimeStringToDate(timeString:string) {
+    // Parse the time string into hours and minutes
+    const [hours, minutes] = timeString.split(':').map(Number);
+
+    // Create a new Date object with the desired date and time
+    // For example, using January 1, 2021 as the date
+    const date = new Date(2021, 0, 1, hours, minutes); // Note: January is month 0
+
+    return date;
+}
+
+
 
     function selectManager(manager: FactoryManager) {
         setSelectedManager(manager);
@@ -68,7 +82,7 @@ export default function WeekView(props: {
                         {props.officeHours[day].map((officeHour, index) => {
                             return (
                                 <Grid item
-                                      xs={calc30MinSlots(officeHour.start, officeHour.end)}
+                                      xs={calc30MinSlots(convertTimeStringToDate(officeHour.attributes.Start_Time), convertTimeStringToDate(officeHour.attributes.End_Time))}
                                       key={index}
                                       sx={{
                                           paddingY: '0.1rem',
@@ -91,9 +105,9 @@ export default function WeekView(props: {
                                                 cursor: 'pointer',
                                             }
                                         }}>
-                                        <Typography>{officeHour.name}</Typography>
+                                        <Typography>{officeHour.attributes.First_Name}</Typography>
                                         <Typography variant="caption">
-                                            {toTimeString(officeHour.start)} - {toTimeString(officeHour.end)}
+                                            {toTimeString(convertTimeStringToDate(officeHour.attributes.Start_Time))} - {toTimeString(convertTimeStringToDate(officeHour.attributes.End_Time))}
                                         </Typography>
                                     </Box>
 
