@@ -29,7 +29,7 @@ function OfficeHours() {
     return (  
         <>
         <WeekViewSection managers={managers}/>
-        <ManagerSection/>
+        <ManagerSection managers={managers}/>
         </>
     );
 }

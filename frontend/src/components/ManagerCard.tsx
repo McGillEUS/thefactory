@@ -15,12 +15,12 @@ export default function ManagerCard(props: {
                  borderRadius: '0.15rem',
              }}>
             <Avatar
-                alt={props.manager.name}
+                alt={props.manager.attributes.First_Name}
                 src="/static/images/avatar/1.jpg"
                 sx={{width: '6rem', height: '6rem'}}
             />
-            <Typography variant="h6" className="text-center">{props.manager.name}</Typography>
-            <Typography variant="caption" className="text-center">{props.manager.position}</Typography>
+            <Typography variant="h6" className="text-center">{props.manager.attributes.First_Name}</Typography>
+            <Typography variant="caption" className="text-center">{props.manager.attributes.Role}</Typography>
             <Link
                 className="text-center"
                 color='#57bf94'

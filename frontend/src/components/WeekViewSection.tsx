@@ -9,22 +9,15 @@ type WeekViewSectionProps = {
 }
 
 
-
-
-
-
 export function WeekViewSection(props:WeekViewSectionProps) {
 
     //Now need to do some data processing to filter the managers into the right days
-
     
     let mondayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Monday");
     let tuesdayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Tuesday");
     let wednesdayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Wednesday");
     let thursdayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Thursday");
     let fridayManagers:FactoryManager[] = props.managers.filter((manager)=> manager.attributes.Office_Hour_Day === "Friday");
-
-
 
     
     const mondayHours = [

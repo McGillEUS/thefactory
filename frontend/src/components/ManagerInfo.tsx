@@ -19,14 +19,14 @@ export default function ManagerInfo(props: {
                 <Box className="flex flex-row w-full justify-between">
                     <Box className="flex flex-row items-center pb-4">
                         <Avatar
-                            alt={props.manager?.name}
+                            alt={props.manager?.attributes.First_Name}
                             src="/static/images/avatar/1.jpg"
                             sx={{width: '6rem', height: '6rem'}}
                         />
                         <Box className="flex flex-col ml-4">
-                            <Typography variant="h6">{props.manager?.name}</Typography>
-                            <Typography variant="caption">{props.manager?.position}</Typography>
-                            <Typography variant="caption">Office Hours: {props.manager?.name}</Typography>
+                            <Typography variant="h6">{props.manager?.attributes.First_Name}</Typography>
+                            <Typography variant="caption">{props.manager?.attributes.Role}</Typography>
+                            <Typography variant="caption">Office Hours: {props.manager?.attributes.Office_Hour_Day}, {props.manager?.attributes.Start_Time} - {props.manager?.attributes.End_Time}</Typography>
                         </Box>
                     </Box>
                     <IconButton className="self-start" onClick={props.onClose}>

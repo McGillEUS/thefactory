@@ -6,9 +6,47 @@ import {useState} from "react";
 import ManagerInfo from "./ManagerInfo.tsx";
 import { FactoryManager } from "../types/FactoryManager.ts";
 
-export function ManagerSection() {
+type ManagerSectionProps = {
+    managers: FactoryManager[];
+}
+
+
+export function ManagerSection(props:ManagerSectionProps) {
     const [open, setOpen] = useState(false);
     const [selectedManager, setSelectedManager] = useState<FactoryManager | null>(null);
+
+    const roleOrder = [
+        "Head Manager",
+        "Technical Director",
+        "Finance Manager",
+        "Workshop Manager",
+        "Communications Manager"
+      ];
+
+    let steeringCommitteeTest: FactoryManager[] = props.managers.filter((manager) => 
+        manager.attributes.Role === "Head Manager" || 
+        manager.attributes.Role === "Technical Director" || 
+        manager.attributes.Role === "Communications Manager" || 
+        manager.attributes.Role === "Finance Manager" || 
+        manager.attributes.Role === "Workshop Manager"
+      );
+    
+      let sortedSteeringCommitee: FactoryManager[] = steeringCommitteeTest.sort((a, b) => {
+        // Get the index of each manager's role in the roleOrder array
+        const roleIndexA = roleOrder.indexOf(a.attributes.Role);
+        const roleIndexB = roleOrder.indexOf(b.attributes.Role);
+        
+        // Compare the indices to determine the sort order
+        return roleIndexA - roleIndexB;
+      });
+
+      
+
+      let generalManagersTest: FactoryManager[] = props.managers.filter((manager) => manager.attributes.Role === "General Manager" );
+    
+
+
+
     const steeringCommittee: FactoryManager[] = [
         {
             personId: 1,
@@ -52,80 +90,7 @@ export function ManagerSection() {
             image: '/static/images/avatar/6.jpg',
         },
     ]
-    const generalManagers: FactoryManager[] = [
-        {
-            personId: 7,
-            name: 'Joseph Feghaly',
-            position: 'General Manager',
-            image: '/static/images/avatar/7.jpg',
-        },
-        {
-            personId: 8,
-            name: 'Sehr Moosabhoy',
-            position: 'General Manager',
-            image: '/static/images/avatar/8.jpg',
-        },
-        {
-            personId: 9,
-            name: 'Sabrina Mansour',
-            position: 'General Manager',
-            image: '/static/images/avatar/9.jpg',
-        },
-        {
-            personId: 10,
-            name: 'Jill',
-            position: 'General Manager',
-            image: '/static/images/avatar/10.jpg',
-        },
-        {
-            personId: 11,
-            name: 'James',
-            position: 'General Manager',
-            image: '/static/images/avatar/11.jpg',
-        },
-        {
-            personId: 12,
-            name: 'Jenny',
-            position: 'General Manager',
-            image: '/static/images/avatar/12.jpg',
-        },
-        {
-            personId: 13,
-            name: 'John',
-            position: 'General Manager',
-            image: '/static/images/avatar/13.jpg',
-        },
-        {
-            personId: 14,
-            name: 'Jane',
-            position: 'General Manager',
-            image: '/static/images/avatar/14.jpg',
-        },
-        {
-            personId: 15,
-            name: 'Jack',
-            position: 'General Manager',
-            image: '/static/images/avatar/15.jpg',
-        },
-        {
-            personId: 16,
-            name: 'Jill',
-            position: 'General Manager',
-            image: '/static/images/avatar/16.jpg',
-        },
-        {
-            personId: 17,
-            name: 'James',
-            position: 'General Manager',
-            image: '/static/images/avatar/17.jpg',
-        },
-        {
-            personId: 18,
-            name: 'Jenny',
-            position: 'General Manager',
-            image: '/static/images/avatar/18.jpg',
-        },
-    ]
+    
 
     function selectManager(manager: FactoryManager) {
         setSelectedManager(manager);
@@ -150,20 +115,20 @@ export function ManagerSection() {
             }}/>
             <Typography variant="h6" className="self-center">Steering Committee</Typography>
             <Grid container className="justify-center w-full  max-w-7xl">
-                {steeringCommittee.map((manager) => {
+                {sortedSteeringCommitee.map((manager) => {
                     return (
                         <Grid item xs={12} sm={4} md={3} lg={2}>
-                            <ManagerCard manager={manager} key={manager.personId} onClick={selectManager}/>
+                            <ManagerCard manager={manager} key={manager.id} onClick={selectManager}/>
                         </Grid>
                     );
                 })}
             </Grid>
             <Typography variant="h6" className="self-center mt-20">General Managers</Typography>
             <Grid container className="justify-center w-full  max-w-7xl">
-                {generalManagers.map((manager) => {
+                {generalManagersTest.map((manager) => {
                     return (
                         <Grid item xs={12} sm={4} md={3} lg={2}>
-                            <ManagerCard manager={manager} key={manager.personId} onClick={selectManager}/>
+                            <ManagerCard manager={manager} key={manager.id} onClick={selectManager}/>
                         </Grid>
                     );
                 })}

@@ -1,6 +1,47 @@
 import { ArrowLeftRight, CalendarRange, CircuitBoard, Clock, FolderOpen, HandHelping, Microchip, Presentation, School, UsersRound, Warehouse } from "lucide-react";
 import { Link } from "react-router-dom";
 import {Divider} from "@mui/material";
+import Faq from "react-faq-component";
+
+const data = {
+
+    rows: [
+        {
+            title: "I'm not in ECSE, can I still be a member of the Factory?",
+            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
+              ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
+              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
+              Fusce sed commodo purus, at tempus turpis.`,
+        },
+        {
+            title: "Do I have to be a member to use the Factory? Even for just a once-off use?",
+            content:
+                "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+        },
+        {
+            title: "Need to use the Factory for a class assignment/lab, is that okay?",
+            content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
+            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
+            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
+            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+        },
+       
+    ],
+};
+
+const styles = {
+    bgColor: '#2c3e50"',
+    rowTitleColor: "white",
+    rowContentColor: "white",
+    // rowContentColor: 'grey',
+    arrowColor: "white",
+};
+
+const config = {
+    // animate: true,
+    // arrowIcon: "V",
+    // tabFocus: true
+};
 
 
 function Home() {
@@ -10,7 +51,7 @@ function Home() {
             <img src="/FactoryBoxWithText.png" alt="" />
         </div>
 
-        <div className="h-[1100px] bg-factory-black text-white font-medium px-40 pt-20 flex flex-col items-center " >
+        <div className="h-[1250px] bg-factory-black text-white font-medium px-40 pt-20 flex flex-col items-center " >
             <h2 className="text-4xl text-center">What is the Factory?</h2>
             <Divider aria-hidden="true" sx={{
                 opacity: 1,
@@ -34,8 +75,8 @@ function Home() {
             }}/>
 
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.1323685966454!2d-73.58157548804465!3d45.50741393043357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a3829eadafd%3A0x304925aa0c44027d!2sTrottier%20Bldg%2C%203630%20Rue%20University%2C%20Montreal%2C%20QC%20H3A%200C6%2C%20Canada!5e0!3m2!1sen!2suk!4v1723555839549!5m2!1sen!2suk" width="1000" height="300" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
-            <div className="flex gap-4 justify-center mt-14">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/H-EEBm-rxqw?si=X_x06NfcIzyQxJbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div className="flex gap-24 justify-center mt-14">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/H-EEBm-rxqw?si=X_x06NfcIzyQxJbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="mt-12"></iframe>
             <div className="flex flex-col items-center gap-4">
                 <h3 className="text-center text-2xl">FAQ</h3>
                 <Divider aria-hidden="true" sx={{
@@ -45,12 +86,16 @@ function Home() {
                 width: '10%',
                 alignSelf: 'center',
                 marginTop: '0rem',
-                marginBottom: '0.5rem',
+                marginBottom: '0rem',
             }}/>
-                <p>"I'm not in ECSE, can I still be a member of the Factory?</p>
-                <p>"Do I have to be a member to use the Factory? Even for just a once-off use?"</p>
-                <p>"I need to use the Factory for a class project, is that okay?"</p>
+            <div className="w-[480px]">
+            <Faq
+                data={data}
+                styles={styles}
+                config={config}
+            />
             </div>
+                      </div>
             </div>
 
         </div>
@@ -120,7 +165,7 @@ function Home() {
 
         </div>
 
-        <div className="h-[500px] bg-factory-black text-white font-medium px-40 pt-20 flex flex-col items-center " >
+        <div className="h-[650px] bg-factory-black text-white font-medium px-40 pt-20 flex flex-col items-center " >
             <h2 className="text-4xl text-center">Learn more</h2>
             <Divider aria-hidden="true" sx={{
                 opacity: 1,
@@ -131,28 +176,28 @@ function Home() {
                 marginTop: '1rem',
                 marginBottom: '1rem',
             }}/>
-            <div className="flex px-28 mt-10 gap-64"> 
-                <ul className="lex-1 flex flex-col gap-y-20">
+            <div className="flex px-28 mt-10 gap-44"> 
+                <ul className="flex flex-col gap-y-14">
                    
-                    <Link to="/office-hours" className="flex flex-col items-center gap-2"><CalendarRange size={44}/>
+                    <Link to="/office-hours" className="flex flex-col items-center gap-2 hover:bg-factory-dark-black p-8"><CalendarRange size={44}/>
                     <p className="text-4xl">Offifce Hours</p></Link>
                 
-                    <Link to='/' className="flex flex-col items-center gap-2">
+                    <Link to='/resources' className="flex flex-col items-center gap-2 hover:bg-factory-dark-black p-8">
                     <FolderOpen size={44}/>
                     <p className="text-4xl">Resources</p>
                     </Link>
                     
 
                 </ul>
-                <ul className=" flex-1 gap-y-20 flex flex-col ">
-                    <li className="flex flex-col items-center gap-2">
-                    <Presentation size={44}/>
-                    <p className="text-4xl">Workshops</p>
-                    </li>
-                    <li className="flex flex-col items-center gap-2">
-                        <Warehouse size={44}/>
-                        <p className="text-4xl">Inventory</p>
-                    </li>
+                <ul className="flex flex-col gap-y-14">
+                 
+                    <Link to="/workshops" className="flex flex-col items-center gap-2 hover:bg-factory-dark-black p-8"> <Presentation size={44}/>
+                    <p className="text-4xl">Workshops</p></Link>
+                   
+                       
+                    <Link to="/inventory" className="flex flex-col items-center gap-2 hover:bg-factory-dark-black p-8"><Warehouse size={44}/>
+                    <p className="text-4xl">Inventory</p></Link>
+            
                 </ul>
             </div>
             
