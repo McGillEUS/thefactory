@@ -9,8 +9,8 @@ function NavBar() {
         <Link to="/">Home</Link>
         <Link to="/office-hours">Office Hours</Link>
         <Link to="/workshops" >Workshops</Link>
-        <Link to="/workshops" >Resources</Link>
-        <Link to="/workshops" >Inventory</Link>
+        <Link to="/resources" >Resources</Link>
+        <Link to="/inventory" >Inventory</Link>
        
       </div>
 

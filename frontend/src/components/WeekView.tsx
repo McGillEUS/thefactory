@@ -90,7 +90,7 @@ function convertTimeStringToDate(timeString:string) {
                                       }}
                                 >
                                     <Box
-                                        onClick={() => selectManager()}
+                                        onClick={() => selectManager(officeHour)}
                                         sx={{
                                             backgroundColor: "#61c299",
                                             color: '#FFFFFF',

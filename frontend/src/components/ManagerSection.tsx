@@ -45,51 +45,6 @@ export function ManagerSection(props:ManagerSectionProps) {
       let generalManagersTest: FactoryManager[] = props.managers.filter((manager) => manager.attributes.Role === "General Manager" );
     
 
-
-
-    const steeringCommittee: FactoryManager[] = [
-        {
-            personId: 1,
-            name: 'Tom Haene',
-            position: 'Head Manager',
-            image: '/static/images/avatar/1.jpg',
-            skills: ['Leadership', 'Management', 'Finance', '3D Printing',
-                'Software Development', 'Project Management', 'Quality Assurance'],
-            courses: ['ECSE 321', 'ECSE 429', 'ECSE 211',
-                'ECSE 223', 'ECSE 323', 'ECSE 324', 'ECSE 425', 'ECSE 426'
-            ],
-        },
-        {
-            personId: 2,
-            name: 'Ari Smith',
-            position: 'Technical Director',
-            image: '/static/images/avatar/2.jpg',
-        },
-        {
-            personId: 3,
-            name: 'Allison Hall',
-            position: 'Communications Manager',
-            image: '/static/images/avatar/3.jpg',
-        },
-        {
-            personId: 4,
-            name: 'Natalia Lucena',
-            position: 'Finance Manager',
-            image: '/static/images/avatar/4.jpg',
-        },
-        {
-            personId: 5,
-            name: 'Bilar Mokhtari',
-            position: 'Workshop Manager',
-            image: '/static/images/avatar/5.jpg',
-        },
-        {
-            personId: 6,
-            name: 'Uriel Sarfati-Magill',
-            position: 'Workshop Manager',
-            image: '/static/images/avatar/6.jpg',
-        },
-    ]
     
 
     function selectManager(manager: FactoryManager) {

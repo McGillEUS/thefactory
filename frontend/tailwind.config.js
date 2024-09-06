@@ -10,7 +10,8 @@ export default {
         "factory-blue" : "#2c3e50",
         "factory-green" : "#57bf94",
         "factory-black" : "#2C3139",
-        "factory-dark-black" : "#272C32"
+        "factory-dark-black" : "#272C32",
+        "factory-dark-green" :" #4ca981"
       },
       fontFamily : {
         'outfit' : ["Outfit", "sans-serif"]

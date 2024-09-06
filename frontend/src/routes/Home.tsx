@@ -74,9 +74,9 @@ function Home() {
                 marginBottom: '1rem',
             }}/>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.1323685966454!2d-73.58157548804465!3d45.50741393043357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a3829eadafd%3A0x304925aa0c44027d!2sTrottier%20Bldg%2C%203630%20Rue%20University%2C%20Montreal%2C%20QC%20H3A%200C6%2C%20Canada!5e0!3m2!1sen!2suk!4v1723555839549!5m2!1sen!2suk" width="1000" height="300" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.1323685966454!2d-73.58157548804465!3d45.50741393043357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a3829eadafd%3A0x304925aa0c44027d!2sTrottier%20Bldg%2C%203630%20Rue%20University%2C%20Montreal%2C%20QC%20H3A%200C6%2C%20Canada!5e0!3m2!1sen!2suk!4v1723555839549!5m2!1sen!2suk" width="1000" height="300" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"> </iframe>
             <div className="flex gap-24 justify-center mt-14">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/H-EEBm-rxqw?si=X_x06NfcIzyQxJbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="mt-12"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/H-EEBm-rxqw?si=X_x06NfcIzyQxJbe" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="mt-12"></iframe>
             <div className="flex flex-col items-center gap-4">
                 <h3 className="text-center text-2xl">FAQ</h3>
                 <Divider aria-hidden="true" sx={{
@@ -100,7 +100,7 @@ function Home() {
 
         </div>
 
-        <div className="h-[630px] bg-white px-36 pt-20 flex flex-col items-center" >
+        <div className="bg-white px-36 pt-20 flex flex-col items-center" >
             <h2 className="text-center text-4xl font-medium">MEMBERSHIP</h2>
             <Divider aria-hidden="true" sx={{
                 opacity: 1,
@@ -158,7 +158,7 @@ function Home() {
                 </ul>
             </div>
 
-            <button className="bg-factory-green p-3 rounded-lg mt-14 text-white font-semibold" >
+            <button className="bg-factory-green p-3 rounded-lg mt-14 text-white font-semibold mb-8 hover:bg-factory-dark-green">
                 BECOME A MEMBER
             </button>
 

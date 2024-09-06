@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "managers",
+  "info": {
+    "singularName": "manager",
+    "pluralName": "managers",
+    "displayName": "Manager",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "First_Name": {
+      "type": "string"
+    },
+    "McGill_Email": {
+      "type": "email"
+    },
+    "Start_Time": {
+      "type": "string"
+    },
+    "End_Time": {
+      "type": "string"
+    },
+    "Last_Name": {
+      "type": "string"
+    },
+    "Role": {
+      "type": "string"
+    },
+    "Office_Hour_Day": {
+      "type": "string"
+    },
+    "ECSE_Courses_Taken": {
+      "type": "customField",
+      "options": [
+        "ECSE 200",
+        "ECSE 210"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    }
+  }
+}

@@ -1,5 +1,4 @@
-import {useTheme} from "@mui/material/styles";
-import {Avatar, Chip, Dialog, DialogContent, Divider, Grid} from "@mui/material";
+import {Avatar,Dialog, DialogContent} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
@@ -11,7 +10,7 @@ export default function ManagerInfo(props: {
     open: boolean,
     onClose: () => void
 }) {
-    const theme = useTheme();
+
 
     return (
         <Dialog open={props.open} maxWidth="sm" fullWidth onClose={props.onClose}>
@@ -33,7 +32,7 @@ export default function ManagerInfo(props: {
                         <Close/>
                     </IconButton>
                 </Box>
-                {(props.manager?.courses || props.manager?.skills) &&
+                {/* {(props.manager?.courses || props.manager?.skills) &&
                     <Divider className="w-full"/>
                 }
                 <Grid container columns={50} className="w-full flex-grow basis-full">
@@ -63,7 +62,7 @@ export default function ManagerInfo(props: {
                             </Box>
                         </Grid>
                     }
-                </Grid>
+                </Grid> */}
             </DialogContent>
         </Dialog>
     );
