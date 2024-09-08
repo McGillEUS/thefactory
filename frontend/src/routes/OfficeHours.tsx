@@ -14,7 +14,7 @@ function OfficeHours() {
 
 
     useEffect(() => {
-        fetch("http://localhost:1337/api/managers" +
+        fetch("https://strapi.smithdrive.space/api/managers" +
       "?populate=*", {
           method: "GET",
 
