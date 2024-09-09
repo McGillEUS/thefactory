@@ -7,7 +7,7 @@ export default function Footer() {
     <>
       {/* Mobile Version */}
       <div className="flex flex-col lg:hidden bg-blue-gray justify-center items-center gap-9 text-white  w-full bg-factory-blue pt-8 pb-3">
-      <img
+        <img
           src="/logo/factory_logo_inline_white.png"
           alt=""
           className="w-56"
@@ -19,7 +19,6 @@ export default function Footer() {
           <Mail strokeWidth={1.5} size={28} className="cursor-pointer" />
         </div>
 
-        
         <p className="font-medium">Copyright © ECSESS Factory 2024</p>
       </div>
 
