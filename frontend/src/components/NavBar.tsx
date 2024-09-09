@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
 
 type NavBarProps = {
@@ -8,13 +8,24 @@ type NavBarProps = {
 };
 
 function NavBar({ toggleDrawer }: NavBarProps) {
-  const { isLoggedIn } = useContext(LoginContext);
-
+  const { isLoggedIn, setLoggedIn } = useContext(LoginContext);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate for redirection
 
   const handleToggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
     toggleDrawer();
+  };
+
+  const handleLogout = () => {
+    // Remove the token from localStorage
+    localStorage.removeItem("token");
+    
+    // Update login state to false
+    setLoggedIn(false);
+
+    // Redirect to the home page
+    navigate("/");
   };
 
   return (
@@ -77,7 +88,10 @@ function NavBar({ toggleDrawer }: NavBarProps) {
           <div className="flex items-center gap-2 text-white hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">
             <a href="#">Contact us</a>
           </div>
-          <button className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green">
+          <button
+            className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green"
+            onClick={isLoggedIn ? handleLogout : undefined} // Attach the logout handler
+          >
             {isLoggedIn ? (
               <p>Log out</p>
             ) : (
@@ -88,30 +102,6 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             )}
           </button>
         </div>
-
-        {/* 
-
-        <div className="flex gap-3 items-end text-white">
-          <img
-            src="/logo/factory_logo_inline_white.png"
-            alt="Factory Logo"
-            className="h-12"
-          />
-          <Link to="/">Home</Link>
-          <Link to="/office-hours">Office Hours</Link>
-          <Link to="/workshops">Workshops</Link>
-          <Link to="/inventory">Inventory</Link>
-        </div>
-
-        <div className="gap-5 flex items-center">
-          <div className="flex items-center gap-2 text-white hover:text-factory-green">
-            Contact Us
-          </div>
-          <button className="bg-factory-green py-2 px-7 rounded-md text-white flex gap-3">
-            <LogIn color="white" />
-            <Link to="/login">Login</Link>
-          </button>
-        </div> */}
       </nav>
     </>
   );

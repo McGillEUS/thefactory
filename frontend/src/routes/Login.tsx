@@ -2,30 +2,35 @@ import { Box, Divider } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 import toast from "react-hot-toast";
 import { LoginContext } from "../Contexts/LoginContext";
 
-
 function Login() {
-
-  const {setLoggedIn} = useContext(LoginContext); 
-
-
+  const { setLoggedIn } = useContext(LoginContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [token, setToken] = useState("");
-
+  const [token, setToken] = useState(localStorage.getItem("token") || ""); // Check for token in localStorage
   const navigate = useNavigate(); // Initialize navigate for redirection
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  useEffect(() => {
+    // Check if token exists in localStorage
+    const storedToken = localStorage.getItem("token");
+    if (storedToken) {
+      setToken(storedToken);
+      setLoggedIn(true);
+      navigate("/inventory"); // Redirect to inventory if token exists
+    }
+  }, [setLoggedIn, navigate]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // Send login request to Strapi
-      const response = await axios.post('https://strapi.smithdrive.space/api/auth/local', {
+      const response = await axios.post("https://strapi.smithdrive.space/api/auth/local", {
         identifier: username,
         password: password,
       });
@@ -34,12 +39,12 @@ function Login() {
       const jwt = response.data.jwt;
       setToken(jwt);
 
-      // Optionally, store the JWT in localStorage for future use
+      // Store the JWT in localStorage for future use
       localStorage.setItem("token", jwt);
 
       // Handle successful login (e.g., redirect to Inventory page)
       setLoggedIn(true);
-      toast.success('Successfully Logged In!');
+      toast.success("Successfully Logged In!");
       navigate("/inventory"); // Redirect to the Inventory page after login
     } catch (error) {
       setErrorMessage("Invalid login credentials.");
@@ -99,7 +104,7 @@ function Login() {
             Login
           </Button>
         </form>
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </Box>
     </div>
   );
