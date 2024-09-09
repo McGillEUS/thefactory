@@ -68,6 +68,7 @@ function Login() {
             marginBottom: "1rem",
           }}
         />
+        <p className="text-gray-600 mb-2">Note that this is for Factory <strong>Managers</strong> only.</p>
         <form className="flex flex-col w-full max-w-md min-w-fit gap-y-3" onSubmit={handleSubmit}>
           <TextField
             type="text"
