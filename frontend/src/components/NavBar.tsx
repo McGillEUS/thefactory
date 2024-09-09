@@ -82,6 +82,19 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             >
               Inventory
             </Link>
+
+            {
+              <>
+                {isLoggedIn && (
+                  <Link
+                    to="/members"
+                    className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+                  >
+                    Members
+                  </Link>
+                )}
+              </>
+            }
           </div>
         </div>
         <div className="gap-5 flex items-center">
