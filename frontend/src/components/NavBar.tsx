@@ -109,7 +109,7 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             Workshops
           </NavLink>
           <NavLink
-            to="/inventory"
+            to="/our-lab"
             style={({ isActive }) => ({
               textDecoration: isActive ? 'underline' : 'undefined',
               textDecorationColor: isActive ? '#57bf94' : 'transparent',
@@ -119,8 +119,9 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
             end
           >
-            Inventory
+            Our Lab
             </NavLink>
+          
             {
               <>
                 {isLoggedIn && (
@@ -134,6 +135,21 @@ function NavBar({ toggleDrawer }: NavBarProps) {
                     })}
                   >
                     Members
+                  </NavLink>
+                )}
+                {isLoggedIn && (
+                  <NavLink
+                  to="/inventory"
+                  style={({ isActive }) => ({
+                    textDecoration: isActive ? 'underline' : 'undefined',
+                    textDecorationColor: isActive ? '#57bf94' : 'transparent',
+                    textDecorationThickness: isActive ? '4px': 'none',
+                    textUnderlineOffset: isActive ? '4px':'none',
+                  })}
+                  // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+                  end
+                >
+                  Inventory
                   </NavLink>
                 )}
               </>
