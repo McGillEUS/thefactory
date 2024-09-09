@@ -1,5 +1,5 @@
 import { LogIn } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 type NavDrawerProps = {
   isOpen: boolean;
@@ -19,18 +19,46 @@ const NavDrawer = (props: NavDrawerProps) => {
           alt=""
           className="h-12 mt-10"
         />
-        <Link to="/" onClick={props.toggleDrawer}>
+        <NavLink
+          to="/"
+          style={({ isActive }) => ({
+            color: isActive ? "#57bf94" : "white",
+          })}
+          onClick={props.toggleDrawer}
+          end
+        >
           Home
-        </Link>
-        <Link to="/office-hours" onClick={props.toggleDrawer}>
+        </NavLink>
+        <NavLink
+          to="/office-hours"
+          style={({ isActive }) => ({
+            color: isActive ? "#57bf94" : "white",
+          })}
+          onClick={props.toggleDrawer}
+          end
+        >
           Office Hours
-        </Link>
-
-        <Link to="/workshops">Workshops</Link>
-
-        <Link to="/inventory" onClick={props.toggleDrawer}>
+        </NavLink>
+        <NavLink
+          to="/workshops"
+          style={({ isActive }) => ({
+            color: isActive ? "#57bf94" : "white",
+          })}
+          onClick={props.toggleDrawer}
+          end
+        >
+          Workshops
+        </NavLink>
+        <NavLink
+          to="/inventory"
+          style={({ isActive }) => ({
+            color: isActive ? "#57bf94" : "white",
+          })}
+          onClick={props.toggleDrawer}
+          end
+        >
           Inventory
-        </Link>
+        </NavLink>
       </div>
 
       <div className="gap-5 flex flex-col items-center">

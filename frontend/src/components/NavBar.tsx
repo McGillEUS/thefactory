@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
 import { Link, useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
+import { NavLink } from 'react-router-dom';
+
 
 type NavBarProps = {
   toggleDrawer: () => void;
@@ -58,43 +60,91 @@ function NavBar({ toggleDrawer }: NavBarProps) {
           <img src="/factory_logo_512x512.png" alt="" className="w-14 mb-4" />
           <h1 className="text-white text-4xl font-medium">The Factory</h1>
           <div className="flex gap-3 font-medium mt-1 ml-3">
-            <Link
+            {/* <Link
               to="/"
               className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
             >
               Home
-            </Link>
-            <Link
-              to="/office-hours"
-              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            >
-              Office Hours
-            </Link>
-            <Link
-              to="/workshops"
-              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            >
-              Workshops
-            </Link>
-            <Link
-              to="/inventory"
-              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            >
-              Inventory
-            </Link>
 
+            </Link> */}
+            <NavLink
+            to="/"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'undefined',
+              textDecorationColor: isActive ? '#57bf94' : 'transparent',
+              textDecorationThickness: isActive ? '4px': 'none',
+              textUnderlineOffset: isActive ? '4px':'none',
+            })}
+            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            end
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/office-hours"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'undefined',
+              textDecorationColor: isActive ? '#57bf94' : 'transparent',
+              textDecorationThickness: isActive ? '4px': 'none',
+              textUnderlineOffset: isActive ? '4px':'none',
+            })}
+            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            end
+          >
+            Office Hours
+          </NavLink>
+          
+    
+             <NavLink
+            to="/workshops"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'undefined',
+              textDecorationColor: isActive ? '#57bf94' : 'transparent',
+              textDecorationThickness: isActive ? '4px': 'none',
+              textUnderlineOffset: isActive ? '4px':'none',
+            })}
+            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            end
+          >
+            Workshops
+          </NavLink>
+          <NavLink
+            to="/inventory"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'undefined',
+              textDecorationColor: isActive ? '#57bf94' : 'transparent',
+              textDecorationThickness: isActive ? '4px': 'none',
+              textUnderlineOffset: isActive ? '4px':'none',
+            })}
+            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            end
+          >
+            Inventory
+            
             {
               <>
                 {isLoggedIn && (
                   <Link
                     to="/members"
-                    className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+                    style={({ isActive }) => ({
+                    textDecoration: isActive ? 'underline' : 'undefined',
+                    textDecorationColor: isActive ? '#57bf94' : 'transparent',
+                    textDecorationThickness: isActive ? '4px': 'none',
+                    textUnderlineOffset: isActive ? '4px':'none',
+                  })}
+                    // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
                   >
                     Members
                   </Link>
                 )}
               </>
             }
+          </NavLink>
+            
+          
+        
+          
+
           </div>
         </div>
         <div className="gap-5 flex items-center">
