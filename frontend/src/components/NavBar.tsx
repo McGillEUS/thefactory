@@ -16,6 +16,7 @@ function NavBar({ toggleDrawer }: NavBarProps) {
 
   return (
     <>
+      {/* Mobile Navbar */}
       <nav className="lg:hidden bg-factory-blue h-20 flex justify-between py-3 pl-9">
         <img
           src="/logo/factory_logo_inline_white.png"
@@ -37,7 +38,30 @@ function NavBar({ toggleDrawer }: NavBarProps) {
         </div>
       </nav>
 
-      <nav className="h-20 bg-factory-blue hidden lg:flex justify-around items-center font-medium">
+      {/* Desktop Navbar */}
+      <nav className="h-24 bg-factory-blue hidden lg:flex justify-between px-12 font-medium pt-1">
+        <div className="flex gap-3 text-white items-center h-full">
+          <img src="/factory_logo_512x512.png" alt="" className="w-14 mb-4" />
+          <h1 className="text-white text-4xl font-medium">The Factory</h1>
+          <div className="flex gap-3 font-medium mt-1 ml-3">
+            <Link to="/" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Home</Link>
+            <Link to="/office-hours" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Office Hours</Link>
+            <Link to="/workshops" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Workshops</Link>
+            <Link to="/inventory" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Inventory</Link>
+          </div>
+        </div>
+        <div className="gap-5 flex items-center">
+          <div className="flex items-center gap-2 text-white hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">
+            <a href="#">Contact us</a>
+          </div>
+          <button className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green">
+            <LogIn color="white" />
+            <Link to="/login">Login</Link>
+          </button>
+        </div>
+
+        {/* 
+
         <div className="flex gap-3 items-end text-white">
           <img
             src="/logo/factory_logo_inline_white.png"
@@ -51,15 +75,14 @@ function NavBar({ toggleDrawer }: NavBarProps) {
         </div>
 
         <div className="gap-5 flex items-center">
-          <button className="bg-factory-green py-2 px-3 rounded-md">
-            Reach out to us
-          </button>
-
           <div className="flex items-center gap-2 text-white hover:text-factory-green">
+            Contact Us
+          </div>
+          <button className="bg-factory-green py-2 px-7 rounded-md text-white flex gap-3">
             <LogIn color="white" />
             <Link to="/login">Login</Link>
-          </div>
-        </div>
+          </button>
+        </div> */}
       </nav>
     </>
   );
