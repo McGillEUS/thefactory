@@ -126,13 +126,7 @@ function NavBar({ toggleDrawer }: NavBarProps) {
                 {isLoggedIn && (
                   <Link
                     to="/members"
-                    style={({ isActive }) => ({
-                    textDecoration: isActive ? 'underline' : 'undefined',
-                    textDecorationColor: isActive ? '#57bf94' : 'transparent',
-                    textDecorationThickness: isActive ? '4px': 'none',
-                    textUnderlineOffset: isActive ? '4px':'none',
-                  })}
-                    // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+                    className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
                   >
                     Members
                   </Link>
