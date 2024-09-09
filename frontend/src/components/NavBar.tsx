@@ -44,7 +44,7 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             alt="Factory Logo"
             className="h-12"
           />
-          <Link to="/" >Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/office-hours">Office Hours</Link>
           <Link to="/workshops">Workshops</Link>
           <Link to="/inventory">Inventory</Link>
