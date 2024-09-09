@@ -7,13 +7,15 @@ import Login from "./routes/Login";
 // import Inventory from "./pages/Inventory";
 // import Manager from "./pages/Manager/Manager.tsx";
 
+
+
 function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/office-hours" element={<OfficeHours />} />
       <Route path="/workshops" element={<Workshops />} />
-      <Route path="/inventory" element={<Inventory />} />
+      <Route path="/inventory" element={<Inventory  />} />
       <Route path="/login" element={<Login /> } />
     </Routes>
   );

@@ -2,11 +2,18 @@ import { Box, Divider } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import toast from "react-hot-toast";
+import { LoginContext } from "../Contexts/LoginContext";
+
 
 function Login() {
+
+  const {setLoggedIn} = useContext(LoginContext); 
+
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -31,6 +38,8 @@ function Login() {
       localStorage.setItem("token", jwt);
 
       // Handle successful login (e.g., redirect to Inventory page)
+      setLoggedIn(true);
+      toast.success('Successfully Logged In!');
       navigate("/inventory"); // Redirect to the Inventory page after login
     } catch (error) {
       setErrorMessage("Invalid login credentials.");

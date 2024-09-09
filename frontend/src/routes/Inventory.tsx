@@ -1,8 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+import { LoginContext } from "../Contexts/LoginContext";
 
-function Inventory() {
+
+type InventoryProps = {
+  loggedIn: boolean;
+};
+
+function Inventory(props: InventoryProps) {
+  const { isLoggedIn } = useContext(LoginContext);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,7 +42,15 @@ function Inventory() {
   return (
     <div>
       <h1>Inventory Page</h1>
-      {/* Add your inventory content here */}
+      {/* Display content based on login status */}
+      {isLoggedIn ? (
+        <div>
+          {/* Add your inventory content here */}
+          <p>You ARE logged in</p>
+        </div>
+      ) : (
+        <p>You are NOT logged in</p>
+      )}
     </div>
   );
 }

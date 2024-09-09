@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
 import { Link } from "react-router-dom";
+import { LoginContext } from "../Contexts/LoginContext";
 
 type NavBarProps = {
   toggleDrawer: () => void;
 };
 
 function NavBar({ toggleDrawer }: NavBarProps) {
+  const { isLoggedIn } = useContext(LoginContext);
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleToggleDrawer = () => {
@@ -44,10 +47,30 @@ function NavBar({ toggleDrawer }: NavBarProps) {
           <img src="/factory_logo_512x512.png" alt="" className="w-14 mb-4" />
           <h1 className="text-white text-4xl font-medium">The Factory</h1>
           <div className="flex gap-3 font-medium mt-1 ml-3">
-            <Link to="/" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Home</Link>
-            <Link to="/office-hours" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Office Hours</Link>
-            <Link to="/workshops" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Workshops</Link>
-            <Link to="/inventory" className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">Inventory</Link>
+            <Link
+              to="/"
+              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            >
+              Home
+            </Link>
+            <Link
+              to="/office-hours"
+              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            >
+              Office Hours
+            </Link>
+            <Link
+              to="/workshops"
+              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            >
+              Workshops
+            </Link>
+            <Link
+              to="/inventory"
+              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+            >
+              Inventory
+            </Link>
           </div>
         </div>
         <div className="gap-5 flex items-center">
@@ -55,8 +78,14 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             <a href="#">Contact us</a>
           </div>
           <button className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green">
-            <LogIn color="white" />
-            <Link to="/login">Login</Link>
+            {isLoggedIn ? (
+              <p>Log out</p>
+            ) : (
+              <>
+                <LogIn color="white" />
+                <Link to="/login">Login</Link>
+              </>
+            )}
           </button>
         </div>
 
