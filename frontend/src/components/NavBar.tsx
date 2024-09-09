@@ -120,20 +120,25 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             end
           >
             Inventory
-            
+            </NavLink>
             {
               <>
                 {isLoggedIn && (
-                  <Link
+                  <NavLink
                     to="/members"
-                    className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+                    style={({ isActive }) => ({
+                      textDecoration: isActive ? 'underline' : 'undefined',
+                      textDecorationColor: isActive ? '#57bf94' : 'transparent',
+                      textDecorationThickness: isActive ? '4px': 'none',
+                      textUnderlineOffset: isActive ? '4px':'none',
+                    })}
                   >
                     Members
-                  </Link>
+                  </NavLink>
                 )}
               </>
             }
-          </NavLink>
+          
             
           
         
