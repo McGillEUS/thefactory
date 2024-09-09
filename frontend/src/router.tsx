@@ -4,6 +4,7 @@ import OfficeHours from "./routes/OfficeHours.tsx";
 import Workshops from "./routes/Workshops.tsx";
 import Inventory from "./routes/Inventory.tsx";
 import Login from "./routes/Login";
+import Members from "./routes/Members";
 // import Inventory from "./pages/Inventory";
 // import Manager from "./pages/Manager/Manager.tsx";
 
@@ -15,7 +16,8 @@ function Router() {
       <Route path="/" element={<Home />} />
       <Route path="/office-hours" element={<OfficeHours />} />
       <Route path="/workshops" element={<Workshops />} />
-      <Route path="/inventory" element={<Inventory  />} />
+      <Route path="/inventory" element={<Inventory loggedIn={false}  />} />
+      <Route path="/members" element={<Members loggedIn={false} />} />
       <Route path="/login" element={<Login /> } />
     </Routes>
   );
