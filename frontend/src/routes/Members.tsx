@@ -84,8 +84,9 @@ function Members() {
   };
 
   const handleAddMember = () => {
-    navigate("/add-member"); // Replace with your route to add a member
+    window.open("/add-member", "_blank");
   };
+  
 
   const handleModifyMember = (memberId: number) => {
     navigate(`/modify-member/${memberId}`); // Replace with your route to modify a member

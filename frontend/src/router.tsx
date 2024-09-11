@@ -6,6 +6,7 @@ import Inventory from "./routes/Inventory.tsx";
 import Login from "./routes/Login";
 import Members from "./routes/Members";
 import OurLab from "./routes/OurLab.tsx";
+import AddMember from "./routes/AddMember.tsx";
 // import Inventory from "./pages/Inventory";
 // import Manager from "./pages/Manager/Manager.tsx";
 
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/inventory" element={<Inventory loggedIn={false}  />} />
       <Route path="/members" element={<Members loggedIn={false} />} />
       <Route path="/login" element={<Login /> } />
+      <Route path="/add-member" element={<AddMember />} />
     </Routes>
   );
 }
