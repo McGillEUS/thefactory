@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode"; // Correct import for jwt-decode
 import axios from "axios";
 import { LoginContext } from "../Contexts/LoginContext";
 
@@ -27,35 +27,35 @@ function Members() {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      // No token, redirect to login
       navigate("/login");
     } else {
       try {
-        // Decode token and check expiration
         const decodedToken = jwtDecode(token) as { exp: number };
-        const currentTime = Date.now() / 1000; // Current time in seconds
+        const currentTime = Date.now() / 1000;
 
         if (decodedToken.exp < currentTime) {
-          // Token expired, redirect to login
           localStorage.removeItem("token");
           navigate("/login");
         } else {
-          // Fetch members if the user is logged in
           fetchMembers();
         }
       } catch (error) {
         console.error("Error decoding token:", error);
-        // In case the token is invalid, redirect to login
         localStorage.removeItem("token");
         navigate("/login");
       }
     }
   }, [navigate]);
 
-  // Fetch members from Strapi (public GET)
+  // Fetch members from the API using the API key from the .env file
   const fetchMembers = async () => {
     try {
-      const response = await axios.get("https://strapi.smithdrive.space/api/members");
+      const apiKey = import.meta.env.VITE_API_KEY; // Access the API key from .env file
+      const response = await axios.get("https://strapi.smithdrive.space/api/members", {
+        headers: {
+          Authorization: `Bearer ${apiKey}`, // Use the API key from the environment
+        },
+      });
       const membersData = response.data.data.map((item: any) => ({
         id: item.id,
         name: item.attributes.name,
@@ -65,38 +65,55 @@ function Members() {
         department: item.attributes.department,
         year: item.attributes.year,
       }));
-      setMembers(membersData); // Update the state with members data
-      setFilteredMembers(membersData); // Set filteredMembers initially to the full list
-      setLoading(false); // Set loading to false
+      setMembers(membersData);
+      setFilteredMembers(membersData);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching members:", error);
-      setLoading(false); // Set loading to false even on error
+      setLoading(false);
     }
   };
 
-  // Handle search input change
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value.toLowerCase();
     setSearchTerm(searchValue);
-
-    // Filter members based on the search term
     const filtered = members.filter((member) =>
       member.name.toLowerCase().includes(searchValue)
     );
     setFilteredMembers(filtered);
   };
 
+  const handleAddMember = () => {
+    navigate("/add-member"); // Replace with your route to add a member
+  };
+
+  const handleModifyMember = (memberId: number) => {
+    navigate(`/modify-member/${memberId}`); // Replace with your route to modify a member
+  };
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl mb-4 font-bold">Members Page</h1>
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Search by name"
-        value={searchTerm}
-        onChange={handleSearch}
-        className="border border-gray-300 p-2 rounded-md mb-4 w-full"
-      />
+
+      {/* Action Buttons */}
+      <div className="mb-4 flex justify-between">
+        <input
+          type="text"
+          placeholder="Search by name"
+          value={searchTerm}
+          onChange={handleSearch}
+          className="border border-gray-300 p-2 rounded-md w-1/2"
+        />
+        <div>
+          <button
+            onClick={handleAddMember}
+            className="bg-blue-500 text-white py-2 px-4 rounded-md mr-2"
+          >
+            Add New Member
+          </button>
+        </div>
+      </div>
+
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -110,6 +127,7 @@ function Members() {
                 <th className="py-2 px-4 border-b">Phone Number</th>
                 <th className="py-2 px-4 border-b">Department</th>
                 <th className="py-2 px-4 border-b">Year</th>
+                <th className="py-2 px-4 border-b">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -122,11 +140,19 @@ function Members() {
                     <td className="py-2 px-4 border-b">{member.phoneNumber}</td>
                     <td className="py-2 px-4 border-b">{member.department}</td>
                     <td className="py-2 px-4 border-b">{member.year}</td>
+                    <td className="py-2 px-4 border-b">
+                      <button
+                        onClick={() => handleModifyMember(member.id)}
+                        className="bg-green-500 text-white py-1 px-3 rounded-md"
+                      >
+                        Modify
+                      </button>
+                    </td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6} className="py-4 text-center">
+                  <td colSpan={7} className="py-4 text-center">
                     No members found.
                   </td>
                 </tr>

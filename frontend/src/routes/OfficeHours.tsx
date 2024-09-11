@@ -14,7 +14,6 @@ type APIFactoryManager = {
   attributes: APIAttributes;
 };
 
-
 // Function to convert time string to Date object
 function convertTimeStringToDate(timeString: string) {
   const [hours, minutes] = timeString.split(":").map(Number);
@@ -25,20 +24,27 @@ function OfficeHours() {
   const [managers, setManagers] = useState<FactoryManager[]>([]);
 
   useEffect(() => {
+    const apiKey = import.meta.env.VITE_API_KEY; // Access the API key from .env file
+
     fetch("https://strapi.smithdrive.space/api/managers?populate=*", {
       method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`, // Use the API key in the Authorization header
+      },
     })
       .then((response) => response.json())
       .then((data) => {
         // Convert API response to the expected FactoryManager type
-        const managersWithDates: FactoryManager[] = data.data.map((manager: APIFactoryManager) => ({
-          ...manager,
-          attributes: {
-            ...manager.attributes,
-            Start_Time: convertTimeStringToDate(manager.attributes.Start_Time),
-            End_Time: convertTimeStringToDate(manager.attributes.End_Time),
-          },
-        }));
+        const managersWithDates: FactoryManager[] = data.data.map(
+          (manager: APIFactoryManager) => ({
+            ...manager,
+            attributes: {
+              ...manager.attributes,
+              Start_Time: convertTimeStringToDate(manager.attributes.Start_Time),
+              End_Time: convertTimeStringToDate(manager.attributes.End_Time),
+            },
+          })
+        );
 
         setManagers(managersWithDates);
       })
