@@ -8,24 +8,35 @@ type WeekViewSectionProps = {
   managers: FactoryManager[];
 };
 
+
+
+// Sort function for managers based on Start_Time
+const sortByStartTime = (a: FactoryManager, b: FactoryManager) => {
+  return a.attributes.Start_Time.getTime() - b.attributes.Start_Time.getTime();
+};
+
 export function WeekViewSection(props: WeekViewSectionProps) {
   //Now need to do some data processing to filter the managers into the right days
+  
+  let mondayManagers: FactoryManager[] = props.managers
+    .filter((manager) => manager.attributes.Office_Hour_Day === "Monday")
+    .sort(sortByStartTime);
 
-  let mondayManagers: FactoryManager[] = props.managers.filter(
-    (manager) => manager.attributes.Office_Hour_Day === "Monday"
-  );
-  let tuesdayManagers: FactoryManager[] = props.managers.filter(
-    (manager) => manager.attributes.Office_Hour_Day === "Tuesday"
-  );
-  let wednesdayManagers: FactoryManager[] = props.managers.filter(
-    (manager) => manager.attributes.Office_Hour_Day === "Wednesday"
-  );
-  let thursdayManagers: FactoryManager[] = props.managers.filter(
-    (manager) => manager.attributes.Office_Hour_Day === "Thursday"
-  );
-  let fridayManagers: FactoryManager[] = props.managers.filter(
-    (manager) => manager.attributes.Office_Hour_Day === "Friday"
-  );
+  let tuesdayManagers: FactoryManager[] = props.managers
+    .filter((manager) => manager.attributes.Office_Hour_Day === "Tuesday")
+    .sort(sortByStartTime);
+
+  let wednesdayManagers: FactoryManager[] = props.managers
+    .filter((manager) => manager.attributes.Office_Hour_Day === "Wednesday")
+    .sort(sortByStartTime);
+
+  let thursdayManagers: FactoryManager[] = props.managers
+    .filter((manager) => manager.attributes.Office_Hour_Day === "Thursday")
+    .sort(sortByStartTime);
+
+  let fridayManagers: FactoryManager[] = props.managers
+    .filter((manager) => manager.attributes.Office_Hour_Day === "Friday")
+    .sort(sortByStartTime);
 
   const officeHours: { [key: string]: FactoryManager[] } = {
     Monday: mondayManagers,
@@ -56,8 +67,8 @@ export function WeekViewSection(props: WeekViewSectionProps) {
       <WeekView
         officeHours={officeHours}
         calendarHeight="60dvh"
-        startTime={new Date(2021, 1, 1, 11, 0)}
-        endTime={new Date(2021, 1, 1, 17, 0)}
+        startTime={new Date(2021, 1, 1, 10, 30)}
+        endTime={new Date(2021, 1, 1, 17, 30)}
       />
     </Box>
   );

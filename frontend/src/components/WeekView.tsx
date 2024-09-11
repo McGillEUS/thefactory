@@ -14,20 +14,7 @@ export default function WeekView(props: {
   const numHourSlots = calcHourSlots(props.startTime, props.endTime);
   const num30MinSlots = calc30MinSlots(props.startTime, props.endTime);
   const [open, setOpen] = useState(false);
-  const [selectedManager, setSelectedManager] = useState<FactoryManager | null>(
-    null
-  );
-
-  function convertTimeStringToDate(timeString: string) {
-    // Parse the time string into hours and minutes
-    const [hours, minutes] = timeString.split(":").map(Number);
-
-    // Create a new Date object with the desired date and time
-    // For example, using January 1, 2021 as the date
-    const date = new Date(2021, 0, 1, hours, minutes); // Note: January is month 0
-
-    return date;
-  }
+  const [selectedManager, setSelectedManager] = useState<FactoryManager | null>(null);
 
   function selectManager(manager: FactoryManager) {
     setSelectedManager(manager);
@@ -103,8 +90,8 @@ export default function WeekView(props: {
                 <Grid
                   item
                   xs={calc30MinSlots(
-                    convertTimeStringToDate(officeHour.attributes.Start_Time),
-                    convertTimeStringToDate(officeHour.attributes.End_Time)
+                    officeHour.attributes.Start_Time,
+                    officeHour.attributes.End_Time
                   )}
                   key={index}
                   sx={{
@@ -131,15 +118,8 @@ export default function WeekView(props: {
                   >
                     <Typography>{officeHour.attributes.First_Name}</Typography>
                     <Typography variant="caption">
-                      {toTimeString(
-                        convertTimeStringToDate(
-                          officeHour.attributes.Start_Time
-                        )
-                      )}{" "}
-                      -{" "}
-                      {toTimeString(
-                        convertTimeStringToDate(officeHour.attributes.End_Time)
-                      )}
+                      {toTimeString(officeHour.attributes.Start_Time)} -{" "}
+                      {toTimeString(officeHour.attributes.End_Time)}
                     </Typography>
                   </Box>
                 </Grid>
