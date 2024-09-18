@@ -50,14 +50,14 @@ const NavDrawer = (props: NavDrawerProps) => {
           Workshops
         </NavLink>
         <NavLink
-          to="/inventory"
+          to="/our-lab"
           style={({ isActive }) => ({
             color: isActive ? "#57bf94" : "white",
           })}
           onClick={props.toggleDrawer}
           end
         >
-          Inventory
+          Our Lab
         </NavLink>
       </div>
 

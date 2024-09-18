@@ -1,5 +1,5 @@
 import { Divider } from "@mui/material";
-import { BulletPoints, LabSectionRow } from "../types/LabSectionRow";
+import { LabSectionRow } from "../types/LabSectionRow";
 
 type LabSectionComponentProps = {
   SectionTitle: string;
@@ -9,9 +9,8 @@ type LabSectionComponentProps = {
 export default function LabSectionComponent(props: LabSectionComponentProps) {
   console.log(props);
   return (
-    <div className="w-full bg-factory-black text-white px-40">
+    <div className="w-full bg-factory-black text-white">
       <div className="flex flex-col items-center pt-12">
-        {" "}
         <h2 className="text-center text-4xl font-medium">
           {props.SectionTitle}
         </h2>
@@ -24,96 +23,68 @@ export default function LabSectionComponent(props: LabSectionComponentProps) {
             width: "20%",
             alignSelf: "center",
             marginTop: "1rem",
-            marginBottom: "5rem",
+            marginBottom: "4rem",
           }}
         />
       </div>
 
-      {props.LabSectionRows.map((section, index) => (
-        <div key={index} className="mt-10">
-          {index % 2 === 0 ? (
-            <LeftSection
-              BulletPoints={section.BulletPoints[0]}
-              src={section.Image.data.attributes.url}
-            />
-          ) : (
-            <RightSection
-              BulletPoints={section.BulletPoints[0]}
-              src={section.Image.data.attributes.url}
-            />
-          )}
-        </div>
-      ))}
+          {/* This div is the container for each LabSectionRowComponent */}
+      <div className="flex flex-wrap justify-center lg:justify-start lg:px-40"> 
+        {props.LabSectionRows.map((section, index) => (
+          <LabSectionRowComponent key={index} LabSectionRow={section} />
+        ))}
+      </div>
+
+      <Divider
+        aria-hidden="true"
+        sx={{
+          opacity: 1,
+          borderColor: "white",
+          borderWidth: 2,
+          width: "100%",
+          alignSelf: "center",
+          marginTop: "1rem",
+          marginBottom: "0rem",
+        }}
+      />
     </div>
   );
 }
 
 type SectionProps = {
-  src: string;
-  BulletPoints: BulletPoints;
+  LabSectionRow: LabSectionRow;
 };
 
-function LeftSection(props: SectionProps) {
-  console.log(props.src);
+function LabSectionRowComponent(props: SectionProps) {
   return (
-    <>
-      <div className="flex justify-center gap-10 items-start mb-10">
-        <img
-          src={`https://strapi.smithdrive.space${props.src}`} 
-          alt=""
-          className="h-[530px] object-cover flex-1 rounded-2xl"
-        />
-
-        <ul className="flex-1">
-          {props.BulletPoints.children.map((child, index) => (
-            <li className="list-disc my-5 text-lg font-medium"> {child.children[0].text}</li>
-          ))}
-        </ul>
-      </div>
-      <Divider
-        aria-hidden="true"
-        sx={{
-          opacity: 1,
-          borderColor: "white",
-          borderWidth: 2,
-          width: "100%",
-          alignSelf: "center",
-          marginTop: "1rem",
-          marginBottom: "0rem",
-        }}
+    <div className="flex flex-col items-center gap-10 mb-10 lg:basis-1/2 lg:px-10 ">
+      <img
+        src={`https://strapi.smithdrive.space${props.LabSectionRow.Image.data.attributes.url}`}
+        alt=""
+      className="w-10/12 h-[600px] object-cover rounded-2xl"
       />
-    </>
-  );
-}
-
-function RightSection(props: SectionProps) {
-  return (
-    <>
-      <div className="flex justify-center gap-10 items-start mb-10">
-        <ul className="flex-1">
-          {props.BulletPoints.children.map((child, index) => (
-            <li className="list-disc my-5 text-lg font-medium"> {child.children[0].text}</li>
-          ))}
-        </ul>
-        <img
-          src={`https://strapi.smithdrive.space${props.src}`}
-          alt=""
-          className="h-[530px] object-cover flex-1 rounded-2xl"
-        />
-      </div>
-
-      <Divider
-        aria-hidden="true"
-        sx={{
-          opacity: 1,
-          borderColor: "white",
-          borderWidth: 2,
-          width: "100%",
-          alignSelf: "center",
-          marginTop: "1rem",
-          marginBottom: "0rem",
-        }}
-      />
-    </>
+      {props.LabSectionRow.Description ? (
+        <>
+          {props.LabSectionRow.Description[0].children[0].text === "" ? (
+            <></>
+          ) : (
+            <ul className="lg:px-0 px-14">
+              {props.LabSectionRow.Description[0].children.map(
+                (child, index) => (
+                  <li
+                    key={index}
+                    className="list-disc my-5 text-lg font-medium"
+                  >
+                    {child.children[0].text}
+                  </li>
+                )
+              )}
+            </ul>
+          )}
+        </>
+      ) : (
+        <></>
+      )}
+    </div>
   );
 }

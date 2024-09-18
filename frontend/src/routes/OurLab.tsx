@@ -32,23 +32,42 @@ function OurLab() {
   }, []);
   return (
     <>
-      <div className="bg-white">
-        <div className="flex flex-col items-center h-[700px]  pt-10">
-          <Typography variant="h2" className="self-center">
+      <div className="bg-factory-green">
+        <div className="flex flex-col items-center pb-20 pt-10">
+          <Typography variant="h2" className="self-center text-white">
             Our Lab
           </Typography>
           <Divider
             aria-hidden="true"
             sx={{
               opacity: 1,
-              borderColor: "black",
+              borderColor: "white",
               borderWidth: 2,
               width: "10%",
               alignSelf: "center",
               marginTop: "1rem",
-              marginBottom: "1rem",
+              marginBottom: "2rem",
             }}
           />
+
+          <div className="flex flex-col lg:flex-row justify-center gap-y-10 lg:gap-x-10">
+            <img
+              src="/lab/IMG_0708.jpg"
+              alt=""
+              className="max-h-[650px] object-cover object-bottom rounded-xl"
+            />
+            <img
+              src="/lab/IMG_0709.jpg"
+              alt=""
+              className="max-h-[650px] object-cover object-bottom rounded-xl"
+            />
+
+            <img
+              src="/lab/IMG_0714.jpg"
+              alt=""
+              className="max-h-[650px] object-cover object-bottom rounded-xl"
+            />
+          </div>
         </div>
 
         {labSections.map((labSection, index) => (
@@ -57,7 +76,6 @@ function OurLab() {
             LabSectionRows={labSection.attributes.LabSectionRows}
           />
         ))}
-        
       </div>
     </>
   );

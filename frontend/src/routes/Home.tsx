@@ -222,7 +222,7 @@ function Home() {
           <img src="/FactoryBoxWithText.png" alt="" />
         </div>
 
-        <div className="h-[1250px] bg-factory-black text-white font-medium px-40 pt-20 flex flex-col items-center ">
+        <div className="bg-factory-black text-white font-medium px-40 pt-20 flex flex-col items-center pb-12">
           <h2 className="text-4xl text-center">What is the Factory?</h2>
           <Divider
             aria-hidden="true"
@@ -260,11 +260,13 @@ function Home() {
             }}
           />
 
+          <p className="mb-2">We're located in room 0080 of the Trottier Building! (See the building in Red below)</p>
+
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.1323685966454!2d-73.58157548804465!3d45.50741393043357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a3829eadafd%3A0x304925aa0c44027d!2sTrottier%20Bldg%2C%203630%20Rue%20University%2C%20Montreal%2C%20QC%20H3A%200C6%2C%20Canada!5e0!3m2!1sen!2suk!4v1723555839549!5m2!1sen!2suk"
+            src="https://maps.mcgill.ca/?lat=45.50597407531836&lng=-73.57909006262219&z=16.25&cmp=1&txt=EN&id=Trottier"
             width="1000"
-            height="300"
-            allowFullScreen
+            height="500"
+          
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           >

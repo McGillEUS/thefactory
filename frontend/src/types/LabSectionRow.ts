@@ -7,24 +7,24 @@ export type LabSectionRow = {
         }
       }
     };
-    BulletPoints: BulletPoints[];
+    Description: DescriptionChild[] | null; //THIS WILL ALWAYS JUST BE SIZE 1, so ALWAYS DO Description[0] !!
   }
 
+ 
+  type DescriptionChild = { 
+    format: string;             // Format of the list, e.g., "unordered"
+    type: string;               // Type of the list, e.g., "list"
+    children: FirstChild[];   // Array of list item children --> These are the bullet points 
 
+  }
   
   interface FirstChild {
     children: SecondChild[];  // Recursively defined for nested children
     type: string;               // The type of the list item, e.g., "list-item"
   }
 
-  type SecondChild = {
+  type SecondChild = { //This is where the actual text is stored for that bullet point
     text: string;
   }
   
-  // Bullet Points structure
-  export type BulletPoints = {
-    format: string;             // Format of the list, e.g., "unordered"
-    type: string;               // Type of the list, e.g., "list"
-    children: FirstChild[];   // Array of list item children
-  }
-  
+ 
