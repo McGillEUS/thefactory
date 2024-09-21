@@ -2,15 +2,15 @@ import { LogIn } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 type NavDrawerProps = {
-  isOpen: boolean;
   toggleDrawer: () => void;
+  isDrawerOpen: boolean;
 };
 
 const NavDrawer = (props: NavDrawerProps) => {
   return (
     <div
       className={`flex flex-col pb-8 text-white items-center justify-between font-museo-moderno text-[25px] text-cream font-black fixed top-0 left-0 w-96 h-full bg-factory-blue transform ${
-        props.isOpen ? "translate-x-0" : "-translate-x-full"
+        props.isDrawerOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out z-50`}
     >
       <div className="flex flex-col gap-7 items-center">

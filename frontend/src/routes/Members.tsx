@@ -1,8 +1,7 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode"; // Correct import for jwt-decode
 import axios from "axios";
-import { LoginContext } from "../Contexts/LoginContext";
 
 type Member = {
   id: number;
@@ -15,7 +14,6 @@ type Member = {
 };
 
 function Members() {
-  const { isLoggedIn } = useContext(LoginContext);
   const navigate = useNavigate();
 
   const [members, setMembers] = useState<Member[]>([]); // State to store members

@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,9 +14,23 @@ export default function Footer() {
         />
 
         <div className="flex gap-8">
-          <Facebook strokeWidth={1.5} size={28} className="cursor-pointer" />
-          <Linkedin strokeWidth={1.5} size={28} className="cursor-pointer" />
-          <Mail strokeWidth={1.5} size={28} className="cursor-pointer" />
+          <a href="https://www.facebook.com/ecsessfactory">
+            <Facebook strokeWidth={1.5} size={28} />
+          </a>
+          <a href="https://www.instagram.com/thefactory_mcgill/">
+            <Instagram />
+          </a>
+          <a href="https://www.linkedin.com/company/the-factory-mcgill/">
+            <Linkedin strokeWidth={1.5} size={28} />
+          </a>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=thefactory@mcgilleus.ca&su=Inquiry&body=Hello%20there!"
+            target="_blank" // Opens in a new tab
+            rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+          >
+            <Mail strokeWidth={1.5} size={28} />
+          </a>
         </div>
 
         <p className="font-medium">Copyright © ECSESS Factory 2024</p>
@@ -31,18 +45,43 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-72 items-end mt-3">
+          {" "}
           <img
             src="/logo/factory_logo_inline_white.png"
             alt=""
             className="w-48"
           />
-
           <p className="font-medium">Copyright © ECSESS Factory 2024</p>
+          <div className="flex gap-8 items-center">
+            <a
+              href="https://www.facebook.com/ecsessfactory"
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+            >
+              <Facebook strokeWidth={1.5} size={28} />
+            </a>
+            <a
+              href="https://www.instagram.com/thefactory_mcgill/"
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+            >
+              <Instagram />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/the-factory-mcgill/"
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+            >
+              <Linkedin strokeWidth={1.5} size={28} />
+            </a>
 
-          <div className="flex gap-8">
-            <Facebook strokeWidth={1.5} size={28} className="cursor-pointer" />
-            <Linkedin strokeWidth={1.5} size={28} className="cursor-pointer" />
-            <Mail strokeWidth={1.5} size={28} className="cursor-pointer" />
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=thefactory@mcgilleus.ca&su=Inquiry&body=Hello%20there!"
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+            >
+              <Mail strokeWidth={1.5} size={28} />
+            </a>
           </div>
         </div>
       </div>

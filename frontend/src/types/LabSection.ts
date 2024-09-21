@@ -5,6 +5,7 @@ export type LabSection = {
     SectionTitle:string;
     LabSectionRows: LabSectionRow[];
   }
+  id:string;
 
 }
 

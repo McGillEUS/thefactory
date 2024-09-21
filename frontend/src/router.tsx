@@ -10,8 +10,6 @@ import AddMember from "./routes/AddMember.tsx";
 // import Inventory from "./pages/Inventory";
 // import Manager from "./pages/Manager/Manager.tsx";
 
-
-
 function Router() {
   return (
     <Routes>
@@ -19,9 +17,9 @@ function Router() {
       <Route path="/office-hours" element={<OfficeHours />} />
       <Route path="/workshops" element={<Workshops />} />
       <Route path="/our-lab" element={<OurLab />} />
-      <Route path="/inventory" element={<Inventory loggedIn={false}  />} />
-      <Route path="/members" element={<Members loggedIn={false} />} />
-      <Route path="/login" element={<Login /> } />
+      <Route path="/inventory" element={<Inventory />} />
+      <Route path="/members" element={<Members />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/add-member" element={<AddMember />} />
     </Routes>
   );

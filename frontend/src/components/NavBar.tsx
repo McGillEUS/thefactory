@@ -1,33 +1,31 @@
-import React, { useState, useContext } from "react";
+import { useContext } from "react";
 import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
 import { Link, useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
-import { NavLink } from 'react-router-dom';
-
+import { NavLink } from "react-router-dom";
 
 type NavBarProps = {
   toggleDrawer: () => void;
+  isDrawerOpen: boolean;
 };
 
-function NavBar({ toggleDrawer }: NavBarProps) {
-  const { isLoggedIn, setLoggedIn } = useContext(LoginContext);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+function NavBar(props: NavBarProps) {
+  const loginContext = useContext(LoginContext); // Now properly typed
+
   const navigate = useNavigate(); // Initialize navigate for redirection
 
   const handleToggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-    toggleDrawer();
+    props.toggleDrawer();
   };
 
   const handleLogout = () => {
     // Remove the token from localStorage
     localStorage.removeItem("token");
-    
-    // Update login state to false
-    setLoggedIn(false);
 
-    // Redirect to the home page
-    navigate("/");
+    if (loginContext) {
+      loginContext.setLoggedIn(false); // Update login state via context
+      navigate("/");
+    }
   };
 
   return (
@@ -45,7 +43,7 @@ function NavBar({ toggleDrawer }: NavBarProps) {
             onClick={handleToggleDrawer}
             className="transition-transform duration-1000 ease-in-out"
           >
-            {isDrawerOpen ? (
+            {props.isDrawerOpen ? (
               <X size={44} color="#ffffff" />
             ) : (
               <Menu size={44} color="#ffffff" />
@@ -68,109 +66,108 @@ function NavBar({ toggleDrawer }: NavBarProps) {
 
             </Link> */}
             <NavLink
-            to="/"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? 'underline' : 'undefined',
-              textDecorationColor: isActive ? '#57bf94' : 'transparent',
-              textDecorationThickness: isActive ? '4px': 'none',
-              textUnderlineOffset: isActive ? '4px':'none',
-            })}
-            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            end
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/office-hours"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? 'underline' : 'undefined',
-              textDecorationColor: isActive ? '#57bf94' : 'transparent',
-              textDecorationThickness: isActive ? '4px': 'none',
-              textUnderlineOffset: isActive ? '4px':'none',
-            })}
-            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            end
-          >
-            Office Hours
-          </NavLink>
-          
-    
-             <NavLink
-            to="/workshops"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? 'underline' : 'undefined',
-              textDecorationColor: isActive ? '#57bf94' : 'transparent',
-              textDecorationThickness: isActive ? '4px': 'none',
-              textUnderlineOffset: isActive ? '4px':'none',
-            })}
-            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            end
-          >
-            Workshops
-          </NavLink>
-          <NavLink
-            to="/our-lab"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? 'underline' : 'undefined',
-              textDecorationColor: isActive ? '#57bf94' : 'transparent',
-              textDecorationThickness: isActive ? '4px': 'none',
-              textUnderlineOffset: isActive ? '4px':'none',
-            })}
-            // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            end
-          >
-            Our Lab
+              to="/"
+              style={({ isActive }) => ({
+                textDecoration: isActive ? "underline" : "undefined",
+                textDecorationColor: isActive ? "#57bf94" : "transparent",
+                textDecorationThickness: isActive ? "4px" : "none",
+                textUnderlineOffset: isActive ? "4px" : "none",
+              })}
+              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+              end
+            >
+              Home
             </NavLink>
-          
+            <NavLink
+              to="/office-hours"
+              style={({ isActive }) => ({
+                textDecoration: isActive ? "underline" : "undefined",
+                textDecorationColor: isActive ? "#57bf94" : "transparent",
+                textDecorationThickness: isActive ? "4px" : "none",
+                textUnderlineOffset: isActive ? "4px" : "none",
+              })}
+              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+              end
+            >
+              Office Hours
+            </NavLink>
+
+            <NavLink
+              to="/workshops"
+              style={({ isActive }) => ({
+                textDecoration: isActive ? "underline" : "undefined",
+                textDecorationColor: isActive ? "#57bf94" : "transparent",
+                textDecorationThickness: isActive ? "4px" : "none",
+                textUnderlineOffset: isActive ? "4px" : "none",
+              })}
+              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+              end
+            >
+              Workshops
+            </NavLink>
+            <NavLink
+              to="/our-lab"
+              style={({ isActive }) => ({
+                textDecoration: isActive ? "underline" : "undefined",
+                textDecorationColor: isActive ? "#57bf94" : "transparent",
+                textDecorationThickness: isActive ? "4px" : "none",
+                textUnderlineOffset: isActive ? "4px" : "none",
+              })}
+              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+              end
+            >
+              Our Lab
+            </NavLink>
+
             {
               <>
-                {isLoggedIn && (
+                {loginContext?.isLoggedIn && (
                   <NavLink
                     to="/members"
                     style={({ isActive }) => ({
-                      textDecoration: isActive ? 'underline' : 'undefined',
-                      textDecorationColor: isActive ? '#57bf94' : 'transparent',
-                      textDecorationThickness: isActive ? '4px': 'none',
-                      textUnderlineOffset: isActive ? '4px':'none',
+                      textDecoration: isActive ? "underline" : "undefined",
+                      textDecorationColor: isActive ? "#57bf94" : "transparent",
+                      textDecorationThickness: isActive ? "4px" : "none",
+                      textUnderlineOffset: isActive ? "4px" : "none",
                     })}
                   >
                     Members
                   </NavLink>
                 )}
-                {isLoggedIn && (
+                {loginContext?.isLoggedIn && (
                   <NavLink
-                  to="/inventory"
-                  style={({ isActive }) => ({
-                    textDecoration: isActive ? 'underline' : 'undefined',
-                    textDecorationColor: isActive ? '#57bf94' : 'transparent',
-                    textDecorationThickness: isActive ? '4px': 'none',
-                    textUnderlineOffset: isActive ? '4px':'none',
-                  })}
-                  // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-                  end
-                >
-                  Inventory
+                    to="/inventory"
+                    style={({ isActive }) => ({
+                      textDecoration: isActive ? "underline" : "undefined",
+                      textDecorationColor: isActive ? "#57bf94" : "transparent",
+                      textDecorationThickness: isActive ? "4px" : "none",
+                      textUnderlineOffset: isActive ? "4px" : "none",
+                    })}
+                    // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
+                    end
+                  >
+                    Inventory
                   </NavLink>
                 )}
               </>
             }
-          
-            
-          
-        
-          
-
           </div>
         </div>
         <div className="gap-5 flex items-center">
           <div className="flex items-center gap-2 text-white hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">
-            <a href="#">Contact us</a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=thefactory@mcgilleus.ca&su=Inquiry&body=Hello%20there!"
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+            >
+              Contact Us
+            </a>
           </div>
           <button
             className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green"
-            onClick={isLoggedIn ? handleLogout : undefined} // Attach the logout handler
+            onClick={loginContext?.isLoggedIn ? handleLogout : undefined} // Attach the logout handler
           >
-            {isLoggedIn ? (
+            {loginContext?.isLoggedIn ? (
               <p>Log out</p>
             ) : (
               <>

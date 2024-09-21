@@ -11,7 +11,7 @@ import { LoginContext } from "./Contexts/LoginContext";
 
 function App() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  const [isLoggedIn , setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(false);
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
@@ -20,9 +20,9 @@ function App() {
     <>
       <BrowserRouter>
         <ScrollToTop />
-        <LoginContext.Provider value={{isLoggedIn, setLoggedIn}}>
-          <NavBar toggleDrawer={toggleDrawer} />
-          <NavDrawer toggleDrawer={toggleDrawer} isOpen={isDrawerOpen} />
+        <LoginContext.Provider value={{ isLoggedIn, setLoggedIn }}>
+          <NavBar toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
+          <NavDrawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
           <Router />
         </LoginContext.Provider>
         <Toaster />

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import LabItem from "../components/LabSectionComponent";
 import { Divider, Typography } from "@mui/material";
 import { LabSection } from "../types/LabSection";
 import LabSectionComponent from "../components/LabSectionComponent";
@@ -21,10 +20,9 @@ function OurLab() {
     )
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data.data)
         // Convert API response to the expected FactoryManager type
         const labSections: LabSection[] = data.data;
-        // console.log(labSections);
+        console.log(labSections)
 
         setLabSections(labSections);
       })
@@ -70,7 +68,7 @@ function OurLab() {
           </div>
         </div>
 
-        {labSections.map((labSection, index) => (
+        {labSections.map((labSection) => (
           <LabSectionComponent
             SectionTitle={labSection.attributes.SectionTitle}
             LabSectionRows={labSection.attributes.LabSectionRows}

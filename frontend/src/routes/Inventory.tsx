@@ -4,12 +4,9 @@ import { jwtDecode } from "jwt-decode";
 import { LoginContext } from "../Contexts/LoginContext";
 
 
-type InventoryProps = {
-  loggedIn: boolean;
-};
 
-function Inventory(props: InventoryProps) {
-  const { isLoggedIn } = useContext(LoginContext);
+function Inventory() {
+  const loginContext = useContext(LoginContext); // Now properly typed
 
   const navigate = useNavigate();
 
@@ -43,7 +40,7 @@ function Inventory(props: InventoryProps) {
     <div>
       <h1>Inventory Page</h1>
       {/* Display content based on login status */}
-      {isLoggedIn ? (
+      {loginContext?.isLoggedIn ? (
         <div>
           {/* Add your inventory content here */}
           <p>You ARE logged in</p>

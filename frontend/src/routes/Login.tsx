@@ -2,18 +2,18 @@ import { Box, Divider } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 import toast from "react-hot-toast";
 import { LoginContext } from "../Contexts/LoginContext";
 
 function Login() {
-  const { setLoggedIn } = useContext(LoginContext);
+const loginContext = useContext(LoginContext); // Now properly typed
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [token, setToken] = useState(localStorage.getItem("token") || ""); // Check for token in localStorage
+  const [, setToken] = useState(localStorage.getItem("token") || ""); // Check for token in localStorage
   const navigate = useNavigate(); // Initialize navigate for redirection
 
   useEffect(() => {
@@ -21,12 +21,12 @@ function Login() {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
       setToken(storedToken);
-      setLoggedIn(true);
+      loginContext?.setLoggedIn(true);
       navigate("/inventory"); // Redirect to inventory if token exists
     }
-  }, [setLoggedIn, navigate]);
+  }, [loginContext?.isLoggedIn, navigate]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     try {
       // Send login request to Strapi
@@ -43,7 +43,7 @@ function Login() {
       localStorage.setItem("token", jwt);
 
       // Handle successful login (e.g., redirect to Inventory page)
-      setLoggedIn(true);
+      loginContext?.setLoggedIn(true);
       toast.success("Successfully Logged In!");
       navigate("/inventory"); // Redirect to the Inventory page after login
     } catch (error) {

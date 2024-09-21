@@ -20,7 +20,8 @@ export function ManagerSection(props: ManagerSectionProps) {
     "Head Manager",
     "Technical Director",
     "Finance Manager",
-    "Workshop Manager",
+    "Hardware Workshop Manager",
+    "Software Workshop Manager",
     "Communications Manager",
   ];
 
@@ -30,7 +31,8 @@ export function ManagerSection(props: ManagerSectionProps) {
       manager.attributes.Role === "Technical Director" ||
       manager.attributes.Role === "Communications Manager" ||
       manager.attributes.Role === "Finance Manager" ||
-      manager.attributes.Role === "Workshop Manager"
+      manager.attributes.Role === "Hardware Workshop Manager" ||
+      manager.attributes.Role === "Software Workshop Manager"
   );
 
   let sortedSteeringCommitee: FactoryManager[] = steeringCommitteeTest.sort(
@@ -77,10 +79,10 @@ export function ManagerSection(props: ManagerSectionProps) {
       <Typography variant="h6" className="self-center">
         Steering Committee
       </Typography>
-      <Grid container className="justify-center w-full  max-w-7xl">
+      <Grid container className="justify-center w-full max-w-7xl">
         {sortedSteeringCommitee.map((manager) => {
           return (
-            <Grid item xs={12} sm={4} md={3} lg={2}>
+            <Grid item xs={6} sm={4} md={3} lg={2}>
               <ManagerCard
                 manager={manager}
                 key={manager.id}
@@ -96,7 +98,7 @@ export function ManagerSection(props: ManagerSectionProps) {
       <Grid container className="justify-center w-full  max-w-7xl">
         {generalManagersTest.map((manager) => {
           return (
-            <Grid item xs={12} sm={4} md={3} lg={2}>
+            <Grid item xs={6} sm={4} md={3} lg={2}>
               <ManagerCard
                 manager={manager}
                 key={manager.id}

@@ -28,8 +28,8 @@ export default function LabSectionComponent(props: LabSectionComponentProps) {
         />
       </div>
 
-          {/* This div is the container for each LabSectionRowComponent */}
-      <div className="flex flex-wrap justify-center lg:justify-start lg:px-40"> 
+      {/* This div is the container for each LabSectionRowComponent */}
+      <div className="flex flex-wrap justify-center lg:justify-start lg:px-40">
         {props.LabSectionRows.map((section, index) => (
           <LabSectionRowComponent key={index} LabSectionRow={section} />
         ))}
@@ -56,32 +56,33 @@ type SectionProps = {
 };
 
 function LabSectionRowComponent(props: SectionProps) {
+  const { LabSectionRow } = props;
+
+  // Check if Description is not null and has at least one entry
+  const description = LabSectionRow.Description
+    ? LabSectionRow.Description[0]
+    : null;
+
   return (
     <div className="flex flex-col items-center gap-10 mb-10 lg:basis-1/2 lg:px-10 ">
       <img
-        src={`https://strapi.smithdrive.space${props.LabSectionRow.Image.data.attributes.url}`}
+        src={`https://strapi.smithdrive.space${LabSectionRow.Image.data.attributes.url}`}
         alt=""
-      className="w-10/12 h-[600px] object-cover rounded-2xl"
+        className="w-10/12 h-[600px] object-cover rounded-2xl"
       />
-      {props.LabSectionRow.Description ? (
-        <>
-          {props.LabSectionRow.Description[0].children[0].text === "" ? (
-            <></>
-          ) : (
-            <ul className="lg:px-0 px-14">
-              {props.LabSectionRow.Description[0].children.map(
-                (child, index) => (
-                  <li
-                    key={index}
-                    className="list-disc my-5 text-lg font-medium"
-                  >
-                    {child.children[0].text}
-                  </li>
-                )
-              )}
-            </ul>
-          )}
-        </>
+
+      {description ? (
+        <ul className="lg:px-0 px-14">
+          {description.children?.map((child, index) => {
+            return child.children && child.children.length > 0 ? (
+              <li key={index} className="list-disc my-5 text-lg font-medium">
+                {child.children[0].text}
+              </li>
+            ) : (
+              <></>
+            );
+          })}
+        </ul>
       ) : (
         <></>
       )}

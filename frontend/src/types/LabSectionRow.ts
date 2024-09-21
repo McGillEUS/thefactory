@@ -15,10 +15,9 @@ export type LabSectionRow = {
     format: string;             // Format of the list, e.g., "unordered"
     type: string;               // Type of the list, e.g., "list"
     children: FirstChild[];   // Array of list item children --> These are the bullet points 
-
   }
   
-  interface FirstChild {
+  type FirstChild = {
     children: SecondChild[];  // Recursively defined for nested children
     type: string;               // The type of the list item, e.g., "list-item"
   }
