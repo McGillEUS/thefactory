@@ -9,6 +9,7 @@ import NavDrawer from "./components/NavDrawer";
 import { Toaster } from "react-hot-toast";
 import { LoginContext } from "./Contexts/LoginContext";
 
+
 function App() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [isLoggedIn, setLoggedIn] = useState(false);

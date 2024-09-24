@@ -22,7 +22,7 @@ function OurLab() {
       .then((data) => {
         // Convert API response to the expected FactoryManager type
         const labSections: LabSection[] = data.data;
-        console.log(labSections)
+        console.log(labSections);
 
         setLabSections(labSections);
       })
@@ -50,20 +50,14 @@ function OurLab() {
 
           <div className="flex flex-col lg:flex-row justify-center gap-y-10 lg:gap-x-10">
             <img
-              src="/lab/IMG_0708.jpg"
+              src="/FactoryFriendlyRobot.JPG"
               alt=""
-              className="max-h-[650px] object-cover object-bottom rounded-xl"
+              className="h-[450px] object-cover object-bottom rounded-xl w-[400px] 2xl:w-[600px]"
             />
             <img
-              src="/lab/IMG_0709.jpg"
+              src="/Cyril.JPG"
               alt=""
-              className="max-h-[650px] object-cover object-bottom rounded-xl"
-            />
-
-            <img
-              src="/lab/IMG_0714.jpg"
-              alt=""
-              className="max-h-[650px] object-cover object-bottom rounded-xl"
+              className="h-[450px] object-cover object-bottom rounded-xl w-[400px] 2xl:w-[600px]"
             />
           </div>
         </div>

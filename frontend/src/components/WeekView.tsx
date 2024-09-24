@@ -53,7 +53,7 @@ export default function WeekView(props: {
         {/* Office Hours for each day */}
         {Object.keys(props.officeHours).map((day, dayIndex) => (
           <div key={dayIndex} className="flex flex-col">
-            <div className="text-center font-semibold h-8 md:text-base text-sm">{day}</div>
+            <div className="text-center font-semibold h-8 md:text-base text-xs">{day}</div>
             {props.officeHours[day].map((officeHour, index) => (
               <div
                 key={index}

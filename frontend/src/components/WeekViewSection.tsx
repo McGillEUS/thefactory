@@ -60,7 +60,7 @@ export function WeekViewSection(props: WeekViewSectionProps) {
           width: "10%",
           alignSelf: "center",
           marginTop: "1rem",
-          marginBottom: "1rem",
+          marginBottom: "2rem",
         }}
       />
 
