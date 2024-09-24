@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
 import { Link, useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
 import { NavLink } from "react-router-dom";
+import { jwtDecode } from "jwt-decode"; // Import jwt-decode to decode token
 
 type NavBarProps = {
   toggleDrawer: () => void;
@@ -10,22 +11,50 @@ type NavBarProps = {
 };
 
 function NavBar(props: NavBarProps) {
-  const loginContext = useContext(LoginContext); // Now properly typed
-
+  const loginContext = useContext(LoginContext); // Access LoginContext
   const navigate = useNavigate(); // Initialize navigate for redirection
 
-  const handleToggleDrawer = () => {
-    props.toggleDrawer();
+  // Check token validity and update context on component mount
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      try {
+        // Decode the token and check expiration
+        const decodedToken = jwtDecode<{ exp: number }>(token); // Correct usage of jwtDecode
+        const currentTime = Date.now() / 1000; // Current time in seconds
+
+        if (decodedToken.exp < currentTime) {
+          // Token expired, log out the user
+          localStorage.removeItem("token");
+          loginContext?.setLoggedIn(false); // Update context state
+          navigate("/login"); // Redirect to login page
+        } else {
+          // Token is valid, ensure the user stays logged in
+          loginContext?.setLoggedIn(true);
+        }
+      } catch (error) {
+        console.error("Error decoding token:", error);
+        localStorage.removeItem("token"); // Remove invalid token
+        loginContext?.setLoggedIn(false);
+        navigate("/login"); // Redirect to login
+      }
+    } else {
+      loginContext?.setLoggedIn(false); // No token, user is logged out
+    }
+  }, [loginContext, navigate]);
+
+  // Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Remove token from localStorage
+    if (loginContext) {
+      loginContext.setLoggedIn(false); // Update login state
+      navigate("/"); // Redirect to homepage
+    }
   };
 
-  const handleLogout = () => {
-    // Remove the token from localStorage
-    localStorage.removeItem("token");
-
-    if (loginContext) {
-      loginContext.setLoggedIn(false); // Update login state via context
-      navigate("/");
-    }
+  const handleLoginClick = () => {
+    navigate("/login"); // Redirect to login page
   };
 
   return (
@@ -37,17 +66,12 @@ function NavBar(props: NavBarProps) {
           alt="Factory Logo"
           className="h-12"
         />
-
         <div className="lg:hidden cursor-pointer bg-dark-brown p-2 mr-4">
           <button
-            onClick={handleToggleDrawer}
+            onClick={props.toggleDrawer}
             className="transition-transform duration-1000 ease-in-out"
           >
-            {props.isDrawerOpen ? (
-              <X size={44} color="#ffffff" />
-            ) : (
-              <Menu size={44} color="#ffffff" />
-            )}
+            {props.isDrawerOpen ? <X size={44} color="#ffffff" /> : <Menu size={44} color="#ffffff" />}
           </button>
         </div>
       </nav>
@@ -58,121 +82,37 @@ function NavBar(props: NavBarProps) {
           <img src="/factory_logo_512x512.png" alt="" className="w-14 mb-4" />
           <h1 className="text-white text-4xl font-medium">The Factory</h1>
           <div className="flex gap-3 font-medium mt-1 ml-3">
-            {/* <Link
-              to="/"
-              className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-            >
-              Home
+            <NavLink to="/" className="nav-link">Home</NavLink>
+            <NavLink to="/office-hours" className="nav-link">Office Hours</NavLink>
+            <NavLink to="/workshops" className="nav-link">Workshops</NavLink>
+            <NavLink to="/our-lab" className="nav-link">Our Lab</NavLink>
 
-            </Link> */}
-            <NavLink
-              to="/"
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "undefined",
-                textDecorationColor: isActive ? "#57bf94" : "transparent",
-                textDecorationThickness: isActive ? "4px" : "none",
-                textUnderlineOffset: isActive ? "4px" : "none",
-              })}
-              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-              end
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/office-hours"
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "undefined",
-                textDecorationColor: isActive ? "#57bf94" : "transparent",
-                textDecorationThickness: isActive ? "4px" : "none",
-                textUnderlineOffset: isActive ? "4px" : "none",
-              })}
-              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-              end
-            >
-              Office Hours
-            </NavLink>
-
-            <NavLink
-              to="/workshops"
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "undefined",
-                textDecorationColor: isActive ? "#57bf94" : "transparent",
-                textDecorationThickness: isActive ? "4px" : "none",
-                textUnderlineOffset: isActive ? "4px" : "none",
-              })}
-              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-              end
-            >
-              Workshops
-            </NavLink>
-            <NavLink
-              to="/our-lab"
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "undefined",
-                textDecorationColor: isActive ? "#57bf94" : "transparent",
-                textDecorationThickness: isActive ? "4px" : "none",
-                textUnderlineOffset: isActive ? "4px" : "none",
-              })}
-              // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-              end
-            >
-              Our Lab
-            </NavLink>
-
-            {
+            {/* Only show Members and Inventory links if logged in */}
+            {loginContext?.isLoggedIn && (
               <>
-                {loginContext?.isLoggedIn && (
-                  <NavLink
-                    to="/members"
-                    style={({ isActive }) => ({
-                      textDecoration: isActive ? "underline" : "undefined",
-                      textDecorationColor: isActive ? "#57bf94" : "transparent",
-                      textDecorationThickness: isActive ? "4px" : "none",
-                      textUnderlineOffset: isActive ? "4px" : "none",
-                    })}
-                  >
-                    Members
-                  </NavLink>
-                )}
-                {loginContext?.isLoggedIn && (
-                  <NavLink
-                    to="/inventory"
-                    style={({ isActive }) => ({
-                      textDecoration: isActive ? "underline" : "undefined",
-                      textDecorationColor: isActive ? "#57bf94" : "transparent",
-                      textDecorationThickness: isActive ? "4px" : "none",
-                      textUnderlineOffset: isActive ? "4px" : "none",
-                    })}
-                    // className="hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]"
-                    end
-                  >
-                    Inventory
-                  </NavLink>
-                )}
+                <NavLink to="/members" className="nav-link">Members</NavLink>
+                <NavLink to="/inventory" className="nav-link">Inventory</NavLink>
               </>
-            }
+            )}
           </div>
         </div>
+
         <div className="gap-5 flex items-center">
           <div className="flex items-center gap-2 text-white hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=thefactory@mcgilleus.ca&su=Inquiry&body=Hello%20there!"
-              target="_blank" // Opens in a new tab
-              rel="noopener noreferrer" // For security reasons to prevent tab hijacking
-            >
+            <a href="mailto:thefactory@mcgilleus.ca" target="_blank" rel="noopener noreferrer">
               Contact Us
             </a>
           </div>
           <button
             className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green"
-            onClick={loginContext?.isLoggedIn ? handleLogout : undefined} // Attach the logout handler
+            onClick={loginContext?.isLoggedIn ? handleLogout : handleLoginClick} // Attach the correct handler
           >
             {loginContext?.isLoggedIn ? (
               <p>Log out</p>
             ) : (
               <>
                 <LogIn color="white" />
-                <Link to="/login">Login</Link>
+                <p>Login</p>
               </>
             )}
           </button>

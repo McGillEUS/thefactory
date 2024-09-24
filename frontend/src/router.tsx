@@ -7,6 +7,7 @@ import Login from "./routes/Login";
 import Members from "./routes/Members";
 import OurLab from "./routes/OurLab.tsx";
 import AddMember from "./routes/AddMember.tsx";
+import ModifyMember from "./routes/ModifyMember.tsx";
 // import Inventory from "./pages/Inventory";
 // import Manager from "./pages/Manager/Manager.tsx";
 
@@ -21,6 +22,8 @@ function Router() {
       <Route path="/members" element={<Members />} />
       <Route path="/login" element={<Login />} />
       <Route path="/add-member" element={<AddMember />} />
+      <Route path="/modify-member/:memberId" element={<ModifyMember />} />
+
     </Routes>
   );
 }
