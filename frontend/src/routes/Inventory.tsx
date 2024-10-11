@@ -1,53 +1,59 @@
-import { useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
-import { LoginContext } from "../Contexts/LoginContext";
-
-
+import { useContext } from "react";
+import { InventoryContext } from "../Contexts/InventoryContext";
 
 function Inventory() {
-  const loginContext = useContext(LoginContext); // Now properly typed
+  const inventoryContext = useContext(InventoryContext);
 
-  const navigate = useNavigate();
+  if (!inventoryContext) {
+    return <p>Loading...</p>; // Handle loading state
+  }
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-      // No token, redirect to login
-      navigate("/login");
-    } else {
-      try {
-        // Decode token and check expiration
-        const decodedToken = jwtDecode(token); // Correct usage of jwtDecode
-        const currentTime = Date.now() / 1000; // Current time in seconds
-
-        if ((decodedToken as { exp: number }).exp < currentTime) {
-          // Token expired, redirect to login
-          localStorage.removeItem("token"); // Remove invalid token
-          navigate("/login");
-        }
-      } catch (error) {
-        console.error("Error decoding token:", error);
-        // In case the token is invalid, redirect to login
-        localStorage.removeItem("token");
-        navigate("/login");
-      }
-    }
-  }, [navigate]);
+  const { inventory } = inventoryContext;
 
   return (
-    <div>
-      <h1>Inventory Page</h1>
-      {/* Display content based on login status */}
-      {loginContext?.isLoggedIn ? (
-        <div>
-          {/* Add your inventory content here */}
-          <p>You ARE logged in</p>
-        </div>
-      ) : (
-        <p>You are NOT logged in</p>
-      )}
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-4">Inventory List</h1>
+
+      <table className="min-w-full table-auto border-collapse border border-gray-200">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="border px-4 py-2">Name</th>
+            <th className="border px-4 py-2">Category</th>
+            <th className="border px-4 py-2">Quantity</th>
+            <th className="border px-4 py-2">Brand</th>
+            <th className="border px-4 py-2">Model Number</th>
+            <th className="border px-4 py-2">Serial Number</th>
+            <th className="border px-4 py-2">Location</th>
+            <th className="border px-4 py-2">State</th>
+            <th className="border px-4 py-2">Type</th>
+            <th className="border px-4 py-2">Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          {inventory.length > 0 ? (
+            inventory.map((item) => (
+              <tr key={item.id}>
+                <td className="border px-4 py-2">{item.name}</td>
+                <td className="border px-4 py-2">{item.category}</td>
+                <td className="border px-4 py-2">{item.quantity}</td>
+                <td className="border px-4 py-2">{item.brand}</td>
+                <td className="border px-4 py-2">{item.modelNumber}</td>
+                <td className="border px-4 py-2">{item.serialNumber}</td>
+                <td className="border px-4 py-2">{item.location}</td>
+                <td className="border px-4 py-2">{item.state}</td>
+                <td className="border px-4 py-2">{item.type}</td>
+                <td className="border px-4 py-2">{item.class}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={9} className="border px-4 py-2 text-center">
+                No inventory items available.
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   );
 }

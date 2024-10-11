@@ -362,48 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiManagerManager extends Schema.CollectionType {
-  collectionName: 'managers';
-  info: {
-    singularName: 'manager';
-    pluralName: 'managers';
-    displayName: 'Manager';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    First_Name: Attribute.String;
-    McGill_Email: Attribute.Email;
-    Start_Time: Attribute.String;
-    End_Time: Attribute.String;
-    Last_Name: Attribute.String;
-    Role: Attribute.String;
-    Office_Hour_Day: Attribute.String;
-    ECSE_Courses_Taken: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        ['ECSE 200', 'ECSE 210']
-      >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::manager.manager',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::manager.manager',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -830,6 +788,362 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'FAQ';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInventoryItemInventoryItem extends Schema.CollectionType {
+  collectionName: 'inventory_items';
+  info: {
+    singularName: 'inventory-item';
+    pluralName: 'inventory-items';
+    displayName: 'InventoryItem';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    quantity: Attribute.Integer;
+    category: Attribute.Enumeration<
+      [
+        'Cables',
+        'CNC Mill',
+        'Fan',
+        'Function Generator',
+        'Logic Analyzer',
+        'Microscope',
+        'Monitor',
+        'Multimeter',
+        'Oscilloscope',
+        'PC',
+        'Power Supply',
+        'Soldering Station',
+        'Spectrum Analyzer',
+        'Tool',
+        'Voltmeter',
+        'Capacitors',
+        'Chip',
+        'Diode',
+        'Educational Kits',
+        'LED',
+        'Mechanical Hardware',
+        'Misc.',
+        'Motor and Servo',
+        'Op Amps',
+        'PCB Mill',
+        'Proto Boards',
+        'Resistor',
+        'Soldering Supply',
+        'Switches',
+        'Transistor',
+        'Wires',
+        'Adhesive',
+        'Boards',
+        'Communication',
+        'Prototyping',
+        'Digital Storage',
+        'Motor'
+      ]
+    > &
+      Attribute.Required;
+    description: Attribute.Text;
+    brand: Attribute.String;
+    modelNumber: Attribute.String;
+    serialNumber: Attribute.String;
+    location: Attribute.String;
+    state: Attribute.Enumeration<
+      [
+        'Functional',
+        'Rented',
+        'Primarily Functional',
+        'Defective',
+        'Not Tested',
+        'Purchased'
+      ]
+    > &
+      Attribute.Required;
+    type: Attribute.Enumeration<['Hardware', 'Consumable']> &
+      Attribute.Required;
+    class: Attribute.Enumeration<
+      [
+        'Can be Rented',
+        'Free to Use',
+        'Can be Purchased',
+        'Must Remain in the Factory'
+      ]
+    > &
+      Attribute.Required;
+    rental: Attribute.Relation<
+      'api::inventory-item.inventory-item',
+      'manyToOne',
+      'api::rental.rental'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::inventory-item.inventory-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::inventory-item.inventory-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLabItemLabItem extends Schema.CollectionType {
+  collectionName: 'lab_items';
+  info: {
+    singularName: 'lab-item';
+    pluralName: 'lab-items';
+    displayName: 'LabSection';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    SectionTitle: Attribute.String;
+    LabSectionRows: Attribute.Component<'test.image-with-bullet-points', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lab-item.lab-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lab-item.lab-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiManagerManager extends Schema.CollectionType {
+  collectionName: 'managers';
+  info: {
+    singularName: 'manager';
+    pluralName: 'managers';
+    displayName: 'Manager';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    First_Name: Attribute.String;
+    McGill_Email: Attribute.Email;
+    Start_Time: Attribute.String;
+    End_Time: Attribute.String;
+    Last_Name: Attribute.String;
+    Role: Attribute.String;
+    Office_Hour_Day: Attribute.String;
+    picture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Year_Major: Attribute.String;
+    Skills: Attribute.Component<'test.skill', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::manager.manager',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::manager.manager',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMemberMember extends Schema.CollectionType {
+  collectionName: 'members';
+  info: {
+    singularName: 'member';
+    pluralName: 'members';
+    displayName: 'Member';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    department: Attribute.Enumeration<
+      [
+        'Computer Engineering',
+        'Software Engineering',
+        'Electrical Engineering',
+        'Mechanical Engineering',
+        'Materials Engineering',
+        'Mining Engineering',
+        'Chemical Engineering',
+        'Bioengineering',
+        'Civil Engineering',
+        'Other'
+      ]
+    > &
+      Attribute.Required;
+    year: Attribute.Enumeration<['U0', 'U1', 'U2', 'U3', 'U4+']> &
+      Attribute.Required;
+    rentals: Attribute.Relation<
+      'api::member.member',
+      'oneToMany',
+      'api::rental.rental'
+    >;
+    studentId: Attribute.String;
+    phoneNumber: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::member.member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::member.member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRentalRental extends Schema.CollectionType {
+  collectionName: 'rentals';
+  info: {
+    singularName: 'rental';
+    pluralName: 'rentals';
+    displayName: 'Rental';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    rentalId: Attribute.UID & Attribute.Required;
+    inventoryItems: Attribute.Relation<
+      'api::rental.rental',
+      'oneToMany',
+      'api::inventory-item.inventory-item'
+    >;
+    approvingManager: Attribute.Relation<
+      'api::rental.rental',
+      'oneToOne',
+      'api::manager.manager'
+    >;
+    state: Attribute.Enumeration<
+      [
+        'Rented',
+        'Returned - No Damage',
+        'Returned - Some Damage',
+        'Returned - Damage'
+      ]
+    > &
+      Attribute.Required;
+    signOutTime: Attribute.DateTime;
+    dueDate: Attribute.Date;
+    signInTime: Attribute.DateTime;
+    member: Attribute.Relation<
+      'api::rental.rental',
+      'manyToOne',
+      'api::member.member'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rental.rental',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rental.rental',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWorkshopWorkshop extends Schema.CollectionType {
+  collectionName: 'workshops';
+  info: {
+    singularName: 'workshop';
+    pluralName: 'workshops';
+    displayName: 'Workshop';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    WorkshopTitle: Attribute.String;
+    CoverPicture: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Date: Attribute.Date;
+    Details: Attribute.Text;
+    Location: Attribute.String;
+    StartTime: Attribute.Time;
+    EndTime: Attribute.Time;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::workshop.workshop',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::workshop.workshop',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -840,7 +1154,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::manager.manager': ApiManagerManager;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -849,6 +1162,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::faq.faq': ApiFaqFaq;
+      'api::inventory-item.inventory-item': ApiInventoryItemInventoryItem;
+      'api::lab-item.lab-item': ApiLabItemLabItem;
+      'api::manager.manager': ApiManagerManager;
+      'api::member.member': ApiMemberMember;
+      'api::rental.rental': ApiRentalRental;
+      'api::workshop.workshop': ApiWorkshopWorkshop;
     }
   }
 }

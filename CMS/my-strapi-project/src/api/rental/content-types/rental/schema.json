@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rentals",
+  "info": {
+    "singularName": "rental",
+    "pluralName": "rentals",
+    "displayName": "Rental",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rentalId": {
+      "type": "uid",
+      "required": true
+    },
+    "inventoryItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory-item.inventory-item",
+      "mappedBy": "rental"
+    },
+    "approvingManager": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manager.manager"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "Rented",
+        "Returned - No Damage",
+        "Returned - Some Damage",
+        "Returned - Damage"
+      ],
+      "required": true
+    },
+    "signOutTime": {
+      "type": "datetime"
+    },
+    "dueDate": {
+      "type": "date"
+    },
+    "signInTime": {
+      "type": "datetime"
+    },
+    "member": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::member.member",
+      "inversedBy": "rentals"
+    }
+  }
+}
