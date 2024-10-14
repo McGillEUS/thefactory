@@ -63,7 +63,7 @@ function OurLab() {
               className="h-[450px] object-cover object-bottom rounded-xl w-11/12 mx-auto lg:w-5/12"
             />
             <img
-              src="/Cyril.JPG"
+              src="/robotArm.JPG"
               alt=""
               className="h-[450px] object-cover object-bottom rounded-xl w-11/12 mx-auto lg:w-5/12"
             />
