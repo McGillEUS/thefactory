@@ -14,14 +14,24 @@ export default function ManagerCard(props: {
         borderRadius: "0.15rem",
       }}
     >
-      <Avatar
-        alt={props.manager.attributes.First_Name}
-        src="/static/images/avatar/1.jpg"
-        sx={{ width: "6rem", height: "6rem" }}
-      />
+      {props.manager.attributes.picture.data ? (
+        <Avatar
+          alt={props.manager.attributes.First_Name}
+          src={`https://strapi.smithdrive.space${props.manager.attributes.picture.data.attributes.url}`}
+          sx={{ width: "6rem", height: "6rem" }}
+        />
+      ) : (
+        <Avatar
+          alt={props.manager.attributes.First_Name}
+          src="/static/images/avatar/1.jpg"
+          sx={{ width: "6rem", height: "6rem" }}
+        />
+      )}
+
       <Typography variant="h6" className="text-center">
-        {props.manager.attributes.First_Name}
+        {props.manager.attributes.Modified_First_Name}
       </Typography>
+
       <Typography variant="caption" className="text-center">
         {props.manager.attributes.Role}
       </Typography>

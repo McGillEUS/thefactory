@@ -63,9 +63,16 @@ const NavDrawer = (props: NavDrawerProps) => {
 
       <div className="gap-5 flex flex-col items-center">
         <div className="flex items-center gap-2 text-white">
-          <a href="#">Contact us</a>
+          <a
+            href="mailto:thefactory@mcgilleus.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            
+          >
+            Contact us
+          </a>
         </div>
-        <button className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green items-center">
+        <button className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green items-center" onClick={props.toggleDrawer}>
           <LogIn color="white" />
           <Link to="/login">Login</Link>
         </button>

@@ -69,7 +69,7 @@ const loginContext = useContext(LoginContext); // Now properly typed
           }}
         />
         <p className="text-gray-600 mb-2">Note that this is for Factory <strong>Managers</strong> only.</p>
-        <form className="flex flex-col w-full max-w-md min-w-fit gap-y-3" onSubmit={handleSubmit}>
+        <form className="flex flex-col w-full max-w-md min-w-fit gap-y-3 px-6" onSubmit={handleSubmit}>
           <TextField
             type="text"
             id="username"

@@ -1,7 +1,8 @@
-import { Divider } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import { LabSectionRow } from "../types/LabSectionRow";
 import ReactSimplyCarousel from "react-simply-carousel";
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Import arrow icons
 
 type LabSectionComponentProps = {
   SectionTitle: string;
@@ -15,19 +16,19 @@ export default function LabSectionComponent(props: LabSectionComponentProps) {
   const getArrowSize = () => {
     if (window.innerWidth >= 1300) {
       return {
-        fontSize: "40px",
+        size: 40, // Icon size in pixels
         height: 70,
         width: 70,
       };
     } else if (window.innerWidth >= 800) {
       return {
-        fontSize: "30px",
+        size: 30, // Icon size for smaller screens
         height: 60,
         width: 60,
       };
     } else {
       return {
-        fontSize: "20px",
+        size: 20, // Icon size for extra small screens
         height: 45,
         width: 45,
       };
@@ -39,9 +40,18 @@ export default function LabSectionComponent(props: LabSectionComponentProps) {
   return (
     <div className="w-full bg-factory-black text-white">
       <div className="flex flex-col items-center pt-12">
-        <h2 className="text-center text-4xl font-medium">
+        <Typography
+          className="text-center text-white px-2"
+          sx={{
+            fontSize: {
+              md: "3rem", // Size for medium screens and above
+              sm: "2.5rem", // Size for small screens
+              xs: "2rem", // Size for extra-small screens
+            },
+          }}
+        >
           {props.SectionTitle}
-        </h2>
+        </Typography>
         <Divider
           aria-hidden="true"
           sx={{
@@ -58,6 +68,8 @@ export default function LabSectionComponent(props: LabSectionComponentProps) {
 
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
+        disableSwipeByMouse={true}
+        disableSwipeByTouch={true}
         onRequestChange={setActiveSlideIndex}
         itemsToShow={1}
         itemsToScroll={1}
@@ -69,13 +81,20 @@ export default function LabSectionComponent(props: LabSectionComponentProps) {
             borderRadius: "50%",
             color: "white",
             cursor: "pointer",
-            fontSize: arrowSize.fontSize,
             height: arrowSize.height,
             width: arrowSize.width,
             lineHeight: 1,
             textAlign: "center",
+            display: "flex", // Use flexbox for centering
+            justifyContent: "center", // Center horizontally
+            alignItems: "center", // Center vertically
           },
-          children: <span>{`>`}</span>,
+          children: (
+            <ChevronRight
+              size={arrowSize.size} // Set the size dynamically
+              color="white"
+            />
+          ),
         }}
         backwardBtnProps={{
           style: {
@@ -85,22 +104,28 @@ export default function LabSectionComponent(props: LabSectionComponentProps) {
             borderRadius: "50%",
             color: "white",
             cursor: "pointer",
-            fontSize: arrowSize.fontSize,
             height: arrowSize.height,
             width: arrowSize.width,
             lineHeight: 1,
             textAlign: "center",
+            display: "flex", // Use flexbox for centering
+            justifyContent: "center", // Center horizontally
+            alignItems: "center", // Center vertically
           },
-          children: <span>{`<`}</span>,
+          children: (
+            <ChevronLeft
+              size={arrowSize.size} // Set the size dynamically
+              color="white"
+            />
+          ),
         }}
         responsiveProps={[
-          { minWidth: 1300, itemsToShow: 2 },
-          { maxWidth: 1300, itemsToShow: 1 },
+          { minWidth: 1280, itemsToShow: 2 },
+          { maxWidth: 1280, itemsToShow: 1 },
         ]}
         speed={400}
         easing="linear"
       >
-        {/* here you can also pass any other element attributes. Also, you can use your custom components as slides */}
         {props.LabSectionRows.map((section, index) => (
           <LabSectionRowComponent key={index} LabSectionRow={section} />
         ))}
@@ -135,11 +160,12 @@ function LabSectionRowComponent(props: SectionProps) {
     : null;
 
   return (
-    <div className="w-[300px] h-[500px] md:h-[800px] md:w-[500px] 2xl:w-[600px] mb-10 lg:px-5">
+    <div className="w-[70vw] xl:w-[30vw] mb-10 lg:px-5 ">
       <img
         src={`https://strapi.smithdrive.space${LabSectionRow.Image.data.attributes.url}`}
         alt=""
-        className="w-full object-cover rounded-2xl h-2/3"
+        loading="lazy"
+        className="w-full object-cover rounded-2xl h-[370px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
       />
 
       {description ? (

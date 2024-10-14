@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Divider } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 export function PageSection(props: {
@@ -22,12 +22,19 @@ export function PageSection(props: {
       }
       sx={props.sx}
     >
-      <h2
-        className="text-center text-4xl md:text-5xl lg:text-6xl "
-        color={color}
+      <Typography
+        className="text-center"
+        sx={{
+          fontSize: {
+            md: "4rem", // Size for medium screens and above
+            sm: "3.5rem", // Size for small screens
+            xs: "2.5rem", // Size for extra-small screens
+          },
+        }}
       >
         {props.title}
-      </h2>
+      </Typography>
+
       <Divider
         aria-hidden="true"
         sx={{
@@ -36,7 +43,7 @@ export function PageSection(props: {
           borderWidth: 2,
           width: "10%",
           alignSelf: "center",
-          marginTop: "1rem",
+          marginTop: "0.3rem",
           marginBottom: "1rem",
         }}
       />

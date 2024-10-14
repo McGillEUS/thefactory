@@ -8,6 +8,7 @@ import { ExpandMoreOutlined } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { WorkshopDT } from "../types/WorkshopDT.ts";
+import { Presentation } from "lucide-react";
 
 export function WorkshopAccordion(props: {
   workshops: WorkshopDT[];
@@ -70,8 +71,24 @@ export function WorkshopAccordion(props: {
                   {workshop.attributes.WorkshopTitle}
                 </h4>
                 <Typography>{eventDetails}</Typography>
-                {/* If the workshop is old, then don't show a sign-up link */}
-                {new Date(workshop.attributes.Date) < new Date() ? null : (
+                {/* If the workshop is old, then don't show a sign-up link. If it is old, then show a link to the slides */}
+                {new Date(workshop.attributes.Date) < new Date() ? (
+                  <Link
+                    underline={"hover"}
+                    className="self-start"
+                    onClick={(event) => handleSignUp(event, workshop)}
+                    sx={{
+                      "&:hover": {
+                        color: "#57bf94",
+                      },
+                    }}
+                  >
+                    <Typography fontWeight="bold" color={"#57bf94"} className="flex gap-1">
+                      <Presentation />
+                      View Workshop Slides
+                    </Typography>
+                  </Link>
+                ) : (
                   <Link
                     underline={"hover"}
                     className="self-start"

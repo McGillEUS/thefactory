@@ -8,6 +8,7 @@ import { FactoryManager } from "../types/FactoryManager.ts";
 
 type ManagerSectionProps = {
   managers: FactoryManager[];
+  
 };
 
 export function ManagerSection(props: ManagerSectionProps) {
@@ -46,8 +47,10 @@ export function ManagerSection(props: ManagerSectionProps) {
     }
   );
 
-  let generalManagersTest: FactoryManager[] = props.managers.filter(
-    (manager) => manager.attributes.Role === "General Manager"
+  let generalManagers: FactoryManager[] = props.managers.filter(
+    (manager) =>
+      manager.attributes.Role === "General Manager" ||
+      manager.attributes.Role === "Factory Advisor"
   );
 
   function selectManager(manager: FactoryManager) {
@@ -61,9 +64,19 @@ export function ManagerSection(props: ManagerSectionProps) {
       bgcolor="#2C3139"
       color="#FFFFFF"
     >
-      <Typography variant="h2" className="self-center ">
+      <Typography
+        className="text-center"
+        sx={{
+          fontSize: {
+            md: "4rem", // Size for medium screens and above
+            sm: "3.5rem", // Size for small screens
+            xs: "2.5rem", // Size for extra-small screens
+          },
+        }}
+      >
         Managers
       </Typography>
+
       <Divider
         aria-hidden="true"
         sx={{
@@ -72,7 +85,7 @@ export function ManagerSection(props: ManagerSectionProps) {
           borderWidth: 2,
           width: "10%",
           alignSelf: "center",
-          marginTop: "1rem",
+          marginTop: "0.3rem",
           marginBottom: "1rem",
         }}
       />
@@ -96,7 +109,8 @@ export function ManagerSection(props: ManagerSectionProps) {
         General Managers
       </Typography>
       <Grid container className="justify-center w-full  max-w-7xl">
-        {generalManagersTest.map((manager) => {
+        {generalManagers.map((manager) => {
+          console.log(generalManagers);
           return (
             <Grid item xs={6} sm={4} md={3} lg={2}>
               <ManagerCard

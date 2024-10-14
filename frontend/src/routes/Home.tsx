@@ -104,22 +104,22 @@ function Home() {
               marginBottom: "1rem",
             }}
           />
-          <p className="mb-2 text-center">
+          <p className="mb-5 text-center">
             We're located in room 0080 of the Trottier Building! (See the
             building in Red below)
           </p>
 
           <iframe
             src="https://maps.mcgill.ca/?lat=45.50597407531836&lng=-73.57909006262219&z=16.25&cmp=1&txt=EN&id=Trottier"
-            width="100%"
+            width="80%"
             height="500"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="bg-factory-black px-6">
+        <div className="bg-factory-black px-6 flex flex-col items-center">
           <iframe
-            width="100%"
+            width="80%"
             height="315"
             src="https://www.youtube.com/embed/H-EEBm-rxqw?si=X_x06NfcIzyQxJbe"
             title="YouTube video player"
@@ -215,9 +215,14 @@ function Home() {
             </ul>
           </div>
 
-          <button className="bg-factory-green p-3 rounded-lg mt-14 text-white font-semibold mb-8 hover:bg-factory-dark-green">
+          <a
+            href="https://airtable.com/appGh7ESCOFPw5h8R/shrhzcuLK6GuizjBQ"
+            target="_blank" // Opens in a new tab
+            rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+            className="bg-factory-green p-3 rounded-lg mt-14 text-white font-semibold mb-8 hover:bg-factory-dark-green"
+          >
             BECOME A MEMBER
-          </button>
+          </a>
         </div>
       </div>
 

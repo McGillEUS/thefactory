@@ -10,7 +10,7 @@ export default function Footer() {
         <img
           src="/logo/factory_logo_inline_white.png"
           alt=""
-          className="w-56"
+          className="w-56 object-contain"
         />
 
         <div className="flex gap-8">
@@ -40,8 +40,8 @@ export default function Footer() {
 
       <div className="hidden lg:flex flex-col bg-blue-gray justify-center items-center gap-10  text-white w-full h-[300px] bg-factory-blue">
         <div className="flex gap-32 items-center">
-          <img src="/mcgill-logo.png" alt="" className="w-48 h-max" />
-          <img src="/Ecsess-Logo.png" alt="" className="w-48 h-max" />
+          <img src="/mcgill-logo.png" alt="" className="w-48 object-contain" />
+          <img src="/Ecsess-Logo.png" alt="" className="w-48 object-contain" />
         </div>
 
         <div className="flex gap-72 items-end mt-3">
@@ -49,7 +49,7 @@ export default function Footer() {
           <img
             src="/logo/factory_logo_inline_white.png"
             alt=""
-            className="w-48"
+            className="w-48 object-contain"
           />
           <p className="font-medium">Copyright © ECSESS Factory 2024</p>
           <div className="flex gap-8 items-center">

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
-import { Link, useNavigate } from "react-router-dom"; // Use useNavigate for redirection
+import { useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
 import { NavLink } from "react-router-dom";
 import { jwtDecode } from "jwt-decode"; // Import jwt-decode to decode token
@@ -71,7 +71,11 @@ function NavBar(props: NavBarProps) {
             onClick={props.toggleDrawer}
             className="transition-transform duration-1000 ease-in-out"
           >
-            {props.isDrawerOpen ? <X size={44} color="#ffffff" /> : <Menu size={44} color="#ffffff" />}
+            {props.isDrawerOpen ? (
+              <X size={44} color="#ffffff" />
+            ) : (
+              <Menu size={44} color="#ffffff" />
+            )}
           </button>
         </div>
       </nav>
@@ -82,16 +86,59 @@ function NavBar(props: NavBarProps) {
           <img src="/factory_logo_512x512.png" alt="" className="w-14 mb-4" />
           <h1 className="text-white text-4xl font-medium">The Factory</h1>
           <div className="flex gap-3 font-medium mt-1 ml-3">
-            <NavLink to="/" className="nav-link">Home</NavLink>
-            <NavLink to="/office-hours" className="nav-link">Office Hours</NavLink>
-            <NavLink to="/workshops" className="nav-link">Workshops</NavLink>
-            <NavLink to="/our-lab" className="nav-link">Our Lab</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#57bf94] underline decoration-[#57bf94] decoration-[3px] underline-offset-4"
+                  : "text-white hover:text-[#57bf94] hover:underline hover:decoration-[#57bf94] hover:decoration-[3px] hover:underline-offset-4"
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/office-hours"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#57bf94] underline decoration-[#57bf94] decoration-[3px] underline-offset-4"
+                  : "text-white hover:text-[#57bf94] hover:underline hover:decoration-[#57bf94] hover:decoration-[3px] hover:underline-offset-4"
+              }
+            >
+              Office Hours
+            </NavLink>
+
+            <NavLink
+              to="/workshops"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#57bf94] underline decoration-[#57bf94] decoration-[3px] underline-offset-4"
+                  : "text-white hover:text-[#57bf94] hover:underline hover:decoration-[#57bf94] hover:decoration-[3px] hover:underline-offset-4"
+              }
+            >
+              Workshops
+            </NavLink>
+
+            <NavLink
+              to="/our-lab"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#57bf94] underline decoration-[#57bf94] decoration-[3px] underline-offset-4"
+                  : "text-white hover:text-[#57bf94] hover:underline hover:decoration-[#57bf94] hover:decoration-[3px] hover:underline-offset-4"
+              }
+            >
+              Our Lab
+            </NavLink>
 
             {/* Only show Members and Inventory links if logged in */}
             {loginContext?.isLoggedIn && (
               <>
-                <NavLink to="/members" className="nav-link">Members</NavLink>
-                <NavLink to="/inventory" className="nav-link">Inventory</NavLink>
+                <NavLink to="/members" className="nav-link">
+                  Members
+                </NavLink>
+                <NavLink to="/inventory" className="nav-link">
+                  Inventory
+                </NavLink>
               </>
             )}
           </div>
@@ -99,7 +146,11 @@ function NavBar(props: NavBarProps) {
 
         <div className="gap-5 flex items-center">
           <div className="flex items-center gap-2 text-white hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">
-            <a href="mailto:thefactory@mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+            <a
+              href="mailto:thefactory@mcgilleus.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Contact Us
             </a>
           </div>

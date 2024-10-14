@@ -22,7 +22,6 @@ function OurLab() {
       .then((data) => {
         // Convert API response to the expected FactoryManager type
         const labSections: LabSection[] = data.data;
-        console.log(labSections);
 
         setLabSections(labSections);
       })
@@ -32,7 +31,16 @@ function OurLab() {
     <>
       <div className="bg-factory-green">
         <div className="flex flex-col items-center pb-20 pt-10">
-          <Typography variant="h2" className="self-center text-white">
+          <Typography
+            className="text-center text-white"
+            sx={{
+              fontSize: {
+                md: "4rem", // Size for medium screens and above
+                sm: "3.5rem", // Size for small screens
+                xs: "2.5rem", // Size for extra-small screens
+              },
+            }}
+          >
             Our Lab
           </Typography>
           <Divider
@@ -43,21 +51,21 @@ function OurLab() {
               borderWidth: 2,
               width: "10%",
               alignSelf: "center",
-              marginTop: "1rem",
+              marginTop: "0.3rem",
               marginBottom: "2rem",
             }}
           />
 
-          <div className="flex flex-col lg:flex-row justify-center gap-y-10 lg:gap-x-10">
+          <div className="flex flex-col lg:flex-row justify-center gap-y-10 lg:gap-x-5">
             <img
               src="/FactoryFriendlyRobot.JPG"
               alt=""
-              className="h-[450px] object-cover object-bottom rounded-xl w-[400px] 2xl:w-[600px]"
+              className="h-[450px] object-cover object-bottom rounded-xl w-11/12 mx-auto lg:w-5/12"
             />
             <img
               src="/Cyril.JPG"
               alt=""
-              className="h-[450px] object-cover object-bottom rounded-xl w-[400px] 2xl:w-[600px]"
+              className="h-[450px] object-cover object-bottom rounded-xl w-11/12 mx-auto lg:w-5/12"
             />
           </div>
         </div>

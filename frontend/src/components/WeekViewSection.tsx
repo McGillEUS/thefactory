@@ -8,8 +8,6 @@ type WeekViewSectionProps = {
   managers: FactoryManager[];
 };
 
-
-
 // Sort function for managers based on Start_Time
 const sortByStartTime = (a: FactoryManager, b: FactoryManager) => {
   return a.attributes.Start_Time.getTime() - b.attributes.Start_Time.getTime();
@@ -17,7 +15,7 @@ const sortByStartTime = (a: FactoryManager, b: FactoryManager) => {
 
 export function WeekViewSection(props: WeekViewSectionProps) {
   //Now need to do some data processing to filter the managers into the right days
-  
+
   let mondayManagers: FactoryManager[] = props.managers
     .filter((manager) => manager.attributes.Office_Hour_Day === "Monday")
     .sort(sortByStartTime);
@@ -47,10 +45,20 @@ export function WeekViewSection(props: WeekViewSectionProps) {
   };
 
   return (
-    <Box className="py-10 px-8 flex flex-col basis-full items-center">
-      <Typography variant="h2" className="self-center">
+    <Box className="py-10 px-8 flex flex-col basis-full items-center ">
+      <Typography
+        className="text-center"
+        sx={{
+          fontSize: {
+            md: "4rem", // Size for medium screens and above
+            sm: "3.5rem", // Size for small screens
+            xs: "2.5rem", // Size for extra-small screens
+          },
+        }}
+      >
         Office Hours
       </Typography>
+
       <Divider
         aria-hidden="true"
         sx={{
@@ -59,14 +67,13 @@ export function WeekViewSection(props: WeekViewSectionProps) {
           borderWidth: 2,
           width: "10%",
           alignSelf: "center",
-          marginTop: "1rem",
-          marginBottom: "2rem",
+          marginTop: "0.3rem",
+          marginBottom: "1rem",
         }}
       />
 
       <WeekView
         officeHours={officeHours}
-        calendarHeight="60dvh"
         startTime={new Date(2021, 1, 1, 10, 30)}
         endTime={new Date(2021, 1, 1, 17, 30)}
       />
