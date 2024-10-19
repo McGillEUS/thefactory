@@ -60,7 +60,7 @@ function NavBar(props: NavBarProps) {
   return (
     <>
       {/* Mobile Navbar */}
-      <nav className="lg:hidden bg-factory-blue h-20 flex justify-between py-3 pl-9">
+      <nav className="lg:hidden bg-factory-blue h-20 flex justify-between py-3 pl-9 sticky top-0 left-0 right-0 z-50">
         <img
           src="/logo/factory_logo_inline_white.png"
           alt="Factory Logo"
@@ -81,7 +81,7 @@ function NavBar(props: NavBarProps) {
       </nav>
 
       {/* Desktop Navbar */}
-      <nav className="h-24 bg-factory-blue hidden lg:flex justify-between px-12 font-medium pt-1">
+      <nav className="h-24 bg-factory-blue hidden lg:flex justify-between px-12 font-medium pt-1 sticky top-0 left-0 right-0 z-50">
         <div className="flex gap-3 text-white items-center h-full">
           <img src="/factory_logo_512x512.png" alt="" className="w-14 mb-4" />
           <h1 className="text-white text-4xl font-medium">The Factory</h1>
