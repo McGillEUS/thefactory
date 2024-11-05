@@ -435,9 +435,9 @@ function Home() {
               </Link>
 
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=thefactory@mcgilleus.ca&su=Inquiry&body=Hello%20there!"
-                target="_blank" // Opens in a new tab
-                rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+                href="mailto:thefactory@mcgilleus.ca"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 hover:bg-factory-dark-black p-8"
               >
                 <Mail size={44} />

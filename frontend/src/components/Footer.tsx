@@ -25,9 +25,9 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=thefactory@mcgilleus.ca&su=Inquiry&body=Hello%20there!"
-            target="_blank" // Opens in a new tab
-            rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+            href="mailto:thefactory@mcgilleus.ca"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Mail strokeWidth={1.5} size={28} />
           </a>
@@ -76,9 +76,9 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=thefactory@mcgilleus.ca&su=Inquiry&body=Hello%20there!"
-              target="_blank" // Opens in a new tab
-              rel="noopener noreferrer" // For security reasons to prevent tab hijacking
+              href="mailto:thefactory@mcgilleus.ca"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Mail strokeWidth={1.5} size={28} />
             </a>
