@@ -8,7 +8,7 @@ import { ExpandMoreOutlined } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { WorkshopDT } from "../types/WorkshopDT.ts";
-import { Presentation } from "lucide-react";
+import { Presentation, UserRoundCheck } from "lucide-react";
 
 export function WorkshopAccordion(props: {
   workshops: WorkshopDT[];
@@ -17,6 +17,11 @@ export function WorkshopAccordion(props: {
   const handleSignUp = (event: React.MouseEvent, workshop: WorkshopDT) => {
     event.stopPropagation();
     window.open(workshop.attributes.signupLink, "_blank");
+  };
+
+  const handleViewSlides = (event: React.MouseEvent, workshop: WorkshopDT) => {
+    event.stopPropagation();
+    window.open(workshop.attributes.workshopSlides, "_blank");
   };
 
   return (
@@ -36,23 +41,29 @@ export function WorkshopAccordion(props: {
           day: "numeric",
         });
 
-        // Format the start time (e.g., "6 pm")
         const formattedStartTime = startDateTime.toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "numeric",
           hour12: true,
         });
 
-        // Format the end time (e.g., "8 pm")
         const formattedEndTime = endDateTime.toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "numeric",
           hour12: true,
         });
-        const eventDetails = `${workshop.attributes.Location} on ${formattedDate} from ${formattedStartTime} to ${formattedEndTime}`;
+        const eventDetails = `In ${workshop.attributes.Location} on ${formattedDate} from ${formattedStartTime} to ${formattedEndTime}`;
+
+        // Check if the workshop is in the future
+        const isFutureWorkshop = new Date(workshop.attributes.Date) > new Date();
 
         return (
-          <Accordion key={workshop.id} disableGutters={true} sx={props.sx}>
+          <Accordion
+            key={workshop.id}
+            disableGutters={true}
+            sx={props.sx}
+            className="w-full pb-3"
+          >
             <AccordionSummary
               expandIcon={
                 <div className="flex flex-row items-center">
@@ -64,46 +75,50 @@ export function WorkshopAccordion(props: {
               <Box
                 component="img"
                 src={`https://strapi.smithdrive.space${workshop.attributes.CoverPicture.data[0].attributes.url}`}
-                className="h-24 w-24 rounded-sm aspect-square contain-content"
+                className="h-24 w-24 rounded-sm aspect-square contain-content "
               />
-              <Box className="flex flex-col pl-4">
+              <Box className="flex flex-col pl-4 gap-1">
                 <h4 className="text-2xl md:text-3xl lg:text-4xl font-medium">
                   {workshop.attributes.WorkshopTitle}
                 </h4>
                 <Typography>{eventDetails}</Typography>
-                {/* If the workshop is old, then don't show a sign-up link. If it is old, then show a link to the slides */}
-                {new Date(workshop.attributes.Date) < new Date() ? (
-                  <Link
-                    underline={"hover"}
-                    className="self-start"
-                    onClick={(event) => handleSignUp(event, workshop)}
-                    sx={{
-                      "&:hover": {
-                        color: "#57bf94",
-                      },
-                    }}
-                  >
-                    <Typography fontWeight="bold" color={"#57bf94"} className="flex gap-1">
-                      <Presentation />
-                      View Workshop Slides
-                    </Typography>
-                  </Link>
-                ) : (
-                  <Link
-                    underline={"hover"}
-                    className="self-start"
-                    onClick={(event) => handleSignUp(event, workshop)}
-                    sx={{
-                      "&:hover": {
-                        color: "#57bf94",
-                      },
-                    }}
-                  >
-                    <Typography fontWeight="bold" color={"#57bf94"}>
-                      Sign Up Form
-                    </Typography>
-                  </Link>
-                )}
+                <div className="flex md:gap-7 gap-1 md:flex-row flex-col mt-1">
+                  {workshop.attributes.workshopSlides && (
+                    <Link
+                      underline={"hover"}
+                      className="self-start"
+                      onClick={(event) => handleViewSlides(event, workshop)}
+                      sx={{
+                        "&:hover": {
+                          color: "#57bf94",
+                        },
+                      }}
+                    >
+                      <p className="flex gap-2 mt-1 items-center font-bold text-factory-green text-sm">
+                        <Presentation size={20} />
+                        View Workshop Slides
+                      </p>
+                    </Link>
+                  )}
+
+                  {workshop.attributes.signupLink && isFutureWorkshop && (
+                    <Link
+                      underline={"hover"}
+                      className="self-start"
+                      onClick={(event) => handleSignUp(event, workshop)}
+                      sx={{
+                        "&:hover": {
+                          color: "#57bf94",
+                        },
+                      }}
+                    >
+                      <p className="flex gap-2 mt-1 items-center font-bold text-factory-green text-sm">
+                        <UserRoundCheck size={20} />
+                        Sign Up Form
+                      </p>
+                    </Link>
+                  )}
+                </div>
               </Box>
             </AccordionSummary>
             <AccordionDetails className="pt-4">
@@ -113,16 +128,6 @@ export function WorkshopAccordion(props: {
               <Typography className="text-left">
                 {workshop.attributes.Details}
               </Typography>
-              {/* {workshop.googleDriveLink && (
-                <Button href={workshop.googleDriveLink} className="h-10 mt-4">
-                  <Typography
-                    fontWeight="bold"
-                    color={theme.palette.secondary.main}
-                  >
-                    Resources
-                  </Typography>
-                </Button>
-              )} */}
             </AccordionDetails>
           </Accordion>
         );

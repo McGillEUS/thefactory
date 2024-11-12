@@ -18,7 +18,7 @@ export function PageSection(props: {
   return (
     <Box
       className={
-        "px-8 max-w-7xl flex flex-col justify-center" + props.className
+        "px-8 md:w-8/12 max-w-7xl flex flex-col justify-center" + props.className
       }
       sx={props.sx}
     >

@@ -1,37 +1,24 @@
 import { PastWorkshops } from "../components/PastWorkshops";
 import { UpcomingWorkshops } from "../components/UpcomingWorkshops";
-import { WorkshopDT } from "../types/WorkshopDT.ts";
-import { useEffect, useState } from "react";
+import { WorkshopDT } from "../types/WorkshopDT";
+import { useManagerAndLabData } from "../Contexts/ManagerAndLabContext";
 
 export default function Workshops() {
-  const [workshops, setWorkshops] = useState<WorkshopDT[]>([]);
+  const { workshops } = useManagerAndLabData();
 
-  useEffect(() => {
-    const apiKey = import.meta.env.VITE_API_KEY; // Access the API key from .env file
-
-    fetch("https://strapi.smithdrive.space/api/workshops?populate=*", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${apiKey}`, // Use the API key in the Authorization header
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.data);
-        // Convert API response to the expected FactoryManager type
-        const workshops: WorkshopDT[] = data.data;
-        // console.log(workshops);
-
-        setWorkshops(workshops);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  if (!workshops) return <Spinner />;
 
   const upcomingWorkshops: WorkshopDT[] = [];
   const pastWorkshops: WorkshopDT[] = [];
 
   workshops.forEach((workshop) => {
-    if (new Date(workshop.attributes.Date) > new Date()) {
+    // Combine the workshop date and start time into a Date object
+    const workshopStartDateTime = new Date(
+      `${workshop.attributes.Date}T${workshop.attributes.StartTime}`
+    );
+
+    // Compare workshop start date and time with the current date and time
+    if (workshopStartDateTime > new Date()) {
       upcomingWorkshops.push(workshop);
     } else {
       pastWorkshops.push(workshop);
@@ -43,8 +30,16 @@ export default function Workshops() {
       <UpcomingWorkshops upcomingWorkshops={upcomingWorkshops} />
       <br />
       <br />
-
       <PastWorkshops pastWorkshops={pastWorkshops} />
+    </div>
+  );
+}
+
+// components/Spinner.tsx
+export function Spinner() {
+  return (
+    <div className="flex justify-center items-center h-[770px]">
+      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-green-500"></div>
     </div>
   );
 }

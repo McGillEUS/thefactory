@@ -2,7 +2,7 @@ import Router from "./router";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import { useState } from "react";
 import NavDrawer from "./components/NavDrawer";
@@ -19,7 +19,7 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop />
         <LoginContext.Provider value={{ isLoggedIn, setLoggedIn }}>
           <NavBar toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
@@ -28,7 +28,7 @@ function App() {
         </LoginContext.Provider>
         <Toaster />
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

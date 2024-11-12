@@ -10,21 +10,23 @@ import AddMember from "./routes/AddMember.tsx";
 import ModifyMember from "./routes/ModifyMember.tsx";
 // import Inventory from "./pages/Inventory";
 // import Manager from "./pages/Manager/Manager.tsx";
+import { ManagerAndLabProvider } from "./Contexts/ManagerAndLabContext.tsx";
 
 function Router() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/office-hours" element={<OfficeHours />} />
-      <Route path="/workshops" element={<Workshops />} />
-      <Route path="/our-lab" element={<OurLab />} />
-      <Route path="/inventory" element={<Inventory />} />
-      <Route path="/members" element={<Members />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/add-member" element={<AddMember />} />
-      <Route path="/modify-member/:memberId" element={<ModifyMember />} />
-
-    </Routes>
+    <ManagerAndLabProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/office-hours" element={<OfficeHours />} />
+        <Route path="/workshops" element={<Workshops />} />
+        <Route path="/our-lab" element={<OurLab />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/members" element={<Members />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/add-member" element={<AddMember />} />
+        <Route path="/modify-member/:memberId" element={<ModifyMember />} />
+      </Routes>
+    </ManagerAndLabProvider>
   );
 }
 

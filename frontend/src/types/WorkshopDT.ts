@@ -8,7 +8,8 @@ export interface WorkshopDT {
         StartTime: string;
         EndTime: string;
         signupLink?: string;
-        // googleDriveLink?: string;
+        workshopSlides? :string;
+       
         CoverPicture: {
           data:CoverPictureData[];
         }
