@@ -20,7 +20,7 @@ export function ManagerAndLabProvider({ children }: { children: ReactNode }) {
     const apiKey = import.meta.env.VITE_API_KEY;
 
     // Fetch managers
-    fetch("https://strapi.smithdrive.space/api/managers?populate=*", {
+    fetch("https://factorystrapi.mcgilleus.ca/api/managers?populate=*", {
       method: "GET",
       headers: { Authorization: `Bearer ${apiKey}` },
     })
@@ -40,7 +40,7 @@ export function ManagerAndLabProvider({ children }: { children: ReactNode }) {
       .catch((error) => console.log(error));
 
     // Fetch lab sections
-    fetch("https://strapi.smithdrive.space/api/lab-items?populate[LabSectionRows][populate]=Image", {
+    fetch("https://factorystrapi.mcgilleus.ca/api/lab-items?populate[LabSectionRows][populate]=Image", {
       method: "GET",
       headers: { Authorization: `Bearer ${apiKey}` },
     })
@@ -49,7 +49,7 @@ export function ManagerAndLabProvider({ children }: { children: ReactNode }) {
       .catch((error) => console.log(error));
 
     // Fetch workshops
-    fetch("https://strapi.smithdrive.space/api/workshops?populate=*", {
+    fetch("https://factorystrapi.mcgilleus.ca/api/workshops?populate=*", {
       method: "GET",
       headers: { Authorization: `Bearer ${apiKey}` },
     })

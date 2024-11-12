@@ -39,7 +39,7 @@ function Home() {
   useEffect(() => {
     const apiKey = import.meta.env.VITE_API_KEY; // Access the API key from .env file
 
-    fetch("https://strapi.smithdrive.space/api/faqs", {
+    fetch("https://factorystrapi.mcgilleus.ca/api/faqs", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${apiKey}`, // Use the API key in the Authorization header

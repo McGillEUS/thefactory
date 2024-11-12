@@ -9,7 +9,6 @@ export interface WorkshopDT {
         EndTime: string;
         signupLink?: string;
         workshopSlides? :string;
-       
         CoverPicture: {
           data:CoverPictureData[];
         }

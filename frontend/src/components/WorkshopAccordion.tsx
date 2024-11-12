@@ -53,9 +53,16 @@ export function WorkshopAccordion(props: {
           hour12: true,
         });
         const eventDetails = `In ${workshop.attributes.Location} on ${formattedDate} from ${formattedStartTime} to ${formattedEndTime}`;
-
-        // Check if the workshop is in the future
-        const isFutureWorkshop = new Date(workshop.attributes.Date) > new Date();
+        const workshopStartDateTime = new Date(
+          `${workshop.attributes.Date}T${workshop.attributes.StartTime}`
+        );
+      
+      
+        let isFutureWorkshop = false;
+        if(workshopStartDateTime > new Date()){
+           isFutureWorkshop = true;
+        }
+        console.log(workshop)
 
         return (
           <Accordion
@@ -74,7 +81,7 @@ export function WorkshopAccordion(props: {
             >
               <Box
                 component="img"
-                src={`https://strapi.smithdrive.space${workshop.attributes.CoverPicture.data[0].attributes.url}`}
+                src={`https://factorystrapi.mcgilleus.ca${workshop.attributes.CoverPicture.data[0].attributes.url}`}
                 className="h-24 w-24 rounded-sm aspect-square contain-content "
               />
               <Box className="flex flex-col pl-4 gap-1">
