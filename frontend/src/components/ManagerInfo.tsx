@@ -33,7 +33,7 @@ export default function ManagerInfo(props: {
     return null;
   }
 
-  console.log(manager.attributes);
+
 
   return (
     <Dialog open={open} maxWidth="sm" fullWidth onClose={onClose}>

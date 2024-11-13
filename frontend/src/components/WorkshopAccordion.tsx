@@ -62,7 +62,7 @@ export function WorkshopAccordion(props: {
         if(workshopStartDateTime > new Date()){
            isFutureWorkshop = true;
         }
-        console.log(workshop)
+       
 
         return (
           <Accordion

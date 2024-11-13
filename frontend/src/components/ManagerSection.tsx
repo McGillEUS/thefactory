@@ -110,7 +110,7 @@ export function ManagerSection(props: ManagerSectionProps) {
       </Typography>
       <Grid container className="justify-center w-full  max-w-7xl">
         {generalManagers.map((manager) => {
-          console.log(generalManagers);
+          
           return (
             <Grid item xs={6} sm={4} md={3} lg={2}>
               <ManagerCard

@@ -7,7 +7,6 @@ type UpcomingWorkshopsProps = {
 };
 
 export function UpcomingWorkshops(props: UpcomingWorkshopsProps) {
-  console.log(props.upcomingWorkshops);
 
   return (
     <PageSection title="Upcoming Workshops" color="black">
