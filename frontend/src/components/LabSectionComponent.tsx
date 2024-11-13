@@ -162,7 +162,7 @@ function LabSectionRowComponent(props: SectionProps) {
   return (
     <div className="w-[70vw] xl:w-[30vw] mb-10 lg:px-5 ">
       <img
-        src={`https://strapi.smithdrive.space${LabSectionRow.Image.data.attributes.url}`}
+        src={`https://factorystrapi.mcgilleus.ca${LabSectionRow.Image.data.attributes.url}`}
         alt=""
         loading="lazy"
         className="w-full object-cover rounded-2xl h-[370px] sm:h-[400px] md:h-[500px] lg:h-[600px]"

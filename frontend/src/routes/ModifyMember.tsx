@@ -51,7 +51,7 @@ function ModifyMember() {
   const fetchMemberDetails = async () => {
     try {
       const response = await axios.get(
-        `https://strapi.smithdrive.space/api/members/${memberId}`,
+        `https://factorystrapi.mcgilleus.ca/api/members/${memberId}`,
         {
           headers: {
             Authorization: `Bearer ${apiKey}`,
@@ -84,7 +84,7 @@ function ModifyMember() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `https://strapi.smithdrive.space/api/members/${memberId}`,
+        `https://factorystrapi.mcgilleus.ca/api/members/${memberId}`,
         {
           data: {
             name: member?.name,

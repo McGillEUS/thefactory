@@ -43,7 +43,7 @@ export default function ManagerInfo(props: {
             {manager.attributes.picture.data ? (
               <Avatar
                 alt={manager.attributes.First_Name}
-                src={`https://strapi.smithdrive.space${manager.attributes.picture.data.attributes.url}`}
+                src={`https://factorystrapi.mcgilleus.ca${manager.attributes.picture.data.attributes.url}`}
                 sx={{ width: "6rem", height: "6rem" }}
               />
             ) : (

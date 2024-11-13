@@ -42,7 +42,7 @@ function AddMember() {
 
     try {
       const response = await axios.post(
-        "https://strapi.smithdrive.space/api/members",
+        "https://factorystrapi.mcgilleus.ca/api/members",
         {
           data: {
             name: formData.name,

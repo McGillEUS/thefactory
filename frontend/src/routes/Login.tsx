@@ -30,7 +30,7 @@ const loginContext = useContext(LoginContext); // Now properly typed
     e.preventDefault();
     try {
       // Send login request to Strapi
-      const response = await axios.post("https://strapi.smithdrive.space/api/auth/local", {
+      const response = await axios.post("https://factorystrapi.mcgilleus.ca/api/auth/local", {
         identifier: username,
         password: password,
       });

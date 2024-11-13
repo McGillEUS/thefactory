@@ -49,7 +49,7 @@ function Members() {
   const fetchMembers = async () => {
     try {
       const apiKey = import.meta.env.VITE_API_KEY; // Access the API key from .env file
-      const response = await axios.get("https://strapi.smithdrive.space/api/members", {
+      const response = await axios.get("https://factorystrapi.mcgilleus.ca/api/members", {
         headers: {
           Authorization: `Bearer ${apiKey}`, // Use the API key from the environment
         },
