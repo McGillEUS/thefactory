@@ -17,7 +17,7 @@ export default function ManagerCard(props: {
       {props.manager.attributes.picture.data ? (
         <Avatar
           alt={props.manager.attributes.First_Name}
-          src={`https://strapi.smithdrive.space${props.manager.attributes.picture.data.attributes.url}`}
+          src={`https://factorystrapi.mcgilleus.ca${props.manager.attributes.picture.data.attributes.url}`}
           sx={{ width: "6rem", height: "6rem" }}
         />
       ) : (
