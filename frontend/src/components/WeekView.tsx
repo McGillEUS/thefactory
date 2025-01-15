@@ -43,6 +43,38 @@ export default function WeekView(props: {
     }
   }
 
+  // Check if officeHours contains any valid data
+  const hasValidData = Object.keys(props.officeHours).some((day) =>
+    props.officeHours[day].some(
+      (officeHour) =>
+        officeHour.attributes.Office_Hour_Day &&
+        officeHour.attributes.Start_Time &&
+        officeHour.attributes.End_Time
+    )
+  );
+
+  // Render a template grid if there is no valid data
+  if (!hasValidData) {
+    return (
+      <div className="flex justify-center items-center mx-auto py-4">
+        <div className="grid grid-cols-5 lg:gap-5 w-full max-w-6xl">
+          {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map(
+            (day, index) => (
+              <div key={index} className="flex flex-col">
+                <div className="text-center font-semibold h-8 md:text-base text-[0.7rem] lg:mt-4">
+                  {day}
+                </div>
+                <div className="bg-gray-300 text-gray-600 rounded-md lg:p-2 pt-1 px-1 m-1 text-center">
+                  Not yet finalized
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex justify-center items-center mx-auto py-4">
       <div className="grid grid-cols-5 lg:gap-5 w-full max-w-6xl ">
