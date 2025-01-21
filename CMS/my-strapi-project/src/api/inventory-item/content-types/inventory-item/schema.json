@@ -1,0 +1,117 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventory_items",
+  "info": {
+    "singularName": "inventory-item",
+    "pluralName": "inventory-items",
+    "displayName": "InventoryItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Cables",
+        "CNC Mill",
+        "Fan",
+        "Function Generator",
+        "Logic Analyzer",
+        "Microscope",
+        "Monitor",
+        "Multimeter",
+        "Oscilloscope",
+        "PC",
+        "Power Supply",
+        "Soldering Station",
+        "Spectrum Analyzer",
+        "Tool",
+        "Voltmeter",
+        "Capacitors",
+        "Chip",
+        "Diode",
+        "Educational Kits",
+        "LED",
+        "Mechanical Hardware",
+        "Misc.",
+        "Motor and Servo",
+        "Op Amps",
+        "PCB Mill",
+        "Proto Boards",
+        "Resistor",
+        "Soldering Supply",
+        "Switches",
+        "Transistor",
+        "Wires",
+        "Adhesive",
+        "Boards",
+        "Communication",
+        "Prototyping",
+        "Digital Storage",
+        "Motor"
+      ],
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "modelNumber": {
+      "type": "string"
+    },
+    "serialNumber": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "Functional",
+        "Rented",
+        "Primarily Functional",
+        "Defective",
+        "Not Tested",
+        "Purchased"
+      ],
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Hardware",
+        "Consumable"
+      ],
+      "required": true
+    },
+    "class": {
+      "type": "enumeration",
+      "enum": [
+        "Can be Rented",
+        "Free to Use",
+        "Can be Purchased",
+        "Must Remain in the Factory"
+      ],
+      "required": true
+    },
+    "rental": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rental.rental",
+      "inversedBy": "inventoryItems"
+    }
+  }
+}

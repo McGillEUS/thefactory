@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "department": {
+      "type": "enumeration",
+      "enum": [
+        "Computer Engineering",
+        "Software Engineering",
+        "Electrical Engineering",
+        "Mechanical Engineering",
+        "Materials Engineering",
+        "Mining Engineering",
+        "Chemical Engineering",
+        "Bioengineering",
+        "Civil Engineering",
+        "Other"
+      ],
+      "required": true
+    },
+    "year": {
+      "type": "enumeration",
+      "enum": [
+        "U0",
+        "U1",
+        "U2",
+        "U3",
+        "U4+"
+      ],
+      "required": true
+    },
+    "rentals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rental.rental",
+      "mappedBy": "member"
+    },
+    "studentId": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

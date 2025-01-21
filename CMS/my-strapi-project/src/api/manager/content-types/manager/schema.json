@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "managers",
+  "info": {
+    "singularName": "manager",
+    "pluralName": "managers",
+    "displayName": "Manager",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "First_Name": {
+      "type": "string"
+    },
+    "McGill_Email": {
+      "type": "email"
+    },
+    "Start_Time": {
+      "type": "string"
+    },
+    "End_Time": {
+      "type": "string"
+    },
+    "Last_Name": {
+      "type": "string"
+    },
+    "Role": {
+      "type": "string"
+    },
+    "Office_Hour_Day": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Year_Major": {
+      "type": "string"
+    },
+    "Skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "test.skill"
+    }
+  }
+}

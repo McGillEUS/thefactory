@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_test_skills",
+  "info": {
+    "displayName": "Skill"
+  },
+  "options": {},
+  "attributes": {
+    "skill": {
+      "type": "string"
+    }
+  }
+}
