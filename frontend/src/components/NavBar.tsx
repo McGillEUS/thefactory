@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
 import { useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
@@ -13,10 +13,25 @@ type NavBarProps = {
 function NavBar(props: NavBarProps) {
   const loginContext = useContext(LoginContext); // Access LoginContext
   const navigate = useNavigate(); // Initialize navigate for redirection
+  const [status, setStatus] = useState<boolean>();
 
   // Check token validity and update context on component mount
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const apiKey = import.meta.env.VITE_API_KEY; // Access the API key from .env file
+
+    fetch("https://factorystrapi.mcgilleus.ca/api/open-status", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`, // Use the API key in the Authorization header
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.data.attributes.status);
+        setStatus(data.data.attributes.status);
+      })
+      .catch((error) => console.log(error));
 
     if (token) {
       try {
@@ -81,7 +96,23 @@ function NavBar(props: NavBarProps) {
       </nav>
 
       {/* Desktop Navbar */}
-      <nav className="h-24 bg-factory-blue hidden lg:flex justify-between px-12 font-medium pt-1 sticky top-0 left-0 right-0 z-50">
+      <nav className="h-24 bg-factory-blue hidden lg:flex justify-between px-12 font-medium top-0 left-0 right-0 z-50">
+        <div
+          className={`absolute font-semibold text-center left-1/2 transform translate-x-[-50%] pb-2 px-11 pt-3 rounded-b-3xl ${
+            status ? "bg-factory-green" : "bg-red-400"
+          }`}
+        >
+          {status ? (
+            <>
+              {" "}
+              <p>Lab Status : Open ✅</p>{" "}
+              <p className="text-sm">(During Office Hour Schedule)</p>{" "}
+            </>
+          ) : (
+            "Lab Status: Closed ⛔ "
+          )}
+        </div>
+
         <div className="flex gap-3 text-white items-center h-full">
           <img src="/factory_logo_512x512.png" alt="" className="w-14 mb-4" />
           <h1 className="text-white text-4xl font-medium">The Factory</h1>
@@ -145,28 +176,24 @@ function NavBar(props: NavBarProps) {
         </div>
 
         <div className="gap-5 flex items-center">
-          <div className="flex items-center gap-2 text-white hover:underline underline-offset-4 decoration-[3px] decoration-[#57bf94]">
+          <div className="flex items-center gap-2 text-white  decoration-[#57bf94]">
             <a
               href="mailto:thefactory@mcgilleus.ca"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:underline underline-offset-4 decoration-[3px]"
             >
               Contact Us
             </a>
+            <button
+              className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green "
+              onClick={
+                loginContext?.isLoggedIn ? handleLogout : handleLoginClick
+              } // Attach the correct handler
+            >
+              <p>Sponsorship!</p>
+            </button>
           </div>
-          <button
-            className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green"
-            onClick={loginContext?.isLoggedIn ? handleLogout : handleLoginClick} // Attach the correct handler
-          >
-            {loginContext?.isLoggedIn ? (
-              <p>Log out</p>
-            ) : (
-              <>
-                <LogIn color="white" />
-                <p>Login</p>
-              </>
-            )}
-          </button>
         </div>
       </nav>
     </>

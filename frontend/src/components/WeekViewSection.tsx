@@ -144,40 +144,7 @@ export function WeekViewSection(props: WeekViewSectionProps) {
         }}
       />
 
-      {/* Conditionally render opening date and status */}
-      {openingDate && (
-        <>
-          {isFutureDate ? (
-            <Typography
-              sx={{
-                fontSize: "1.5rem",
-                color: "gray",
-                marginBottom: "1rem",
-                textAlign: "center",
-              }}
-            >
-              Opening Date For the Semester: <span className="underline">{formatDate(openingDate)}</span>
-            </Typography>
-          ) : null}
-
-          {isFutureDate ? (
-            // If it's a future date, the factory is always closed
-            <p className="flex items-center gap-1 text-red-800 font-bold text-2xl">
-              <CircleX /> The Factory is currently{" "}
-              <span className="underline">closed</span>
-            </p>
-          ) : !isFutureDate && !status ? (
-            // If it's not a future date but the status is false, the factory is still closed
-            <p className="flex items-center gap-1 text-red-800 font-bold text-2xl">
-              <CircleX /> The Factory is currently{" "}
-              <span className="underline">closed</span>  due to circumstances beyond our control
-            </p>
-          ) :  <p className="flex items-center gap-1 text-green-800 font-bold text-2xl">
-         <CircleCheck /> The Factory is currently{" "}
-          <span className="underline">Open</span> (during below times)
-        </p>}
-        </>
-      )}
+    
 
       <WeekView
         officeHours={officeHours}
