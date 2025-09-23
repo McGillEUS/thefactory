@@ -177,21 +177,17 @@ function NavBar(props: NavBarProps) {
 
         <div className="gap-5 flex items-center">
           <div className="flex items-center gap-2 text-white  decoration-[#57bf94]">
-            <a
+            <button
+              className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green ">
+                 <a
               href="mailto:thefactory@mcgilleus.ca"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline underline-offset-4 decoration-[3px]"
+              className="decoration-[3px]"
             >
               Contact Us
             </a>
-            <button
-              className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green "
-              onClick={
-                loginContext?.isLoggedIn ? handleLogout : handleLoginClick
-              } // Attach the correct handler
-            >
-              <p>Sponsorship!</p>
+              
             </button>
           </div>
         </div>
