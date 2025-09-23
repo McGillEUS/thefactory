@@ -228,7 +228,8 @@ function Home() {
 
       {/* Desktop Version */}
       <div className="hidden lg:block">
-        <div className="h-[750px] bg-factory-green flex items-center justify-center ">
+        
+        <div className="h-customh bg-factory-green flex items-center justify-center ">
           <img src="/FactoryBoxWithText.png" alt="" />
         </div>
 

@@ -15,7 +15,10 @@ export default {
       },
       fontFamily : {
         'outfit' : ["Outfit", "sans-serif"]
-      }
+      },
+      height:{
+        customh: 'calc(100vh - 96px)'
+      },
 
     },
   },
