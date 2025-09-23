@@ -21,8 +21,7 @@ export function ManagerSection(props: ManagerSectionProps) {
     "Head Manager",
     "Technical Director",
     "Finance Manager",
-    "Hardware Workshop Manager",
-    "Software Workshop Manager",
+    "Workshop Manager",
     "Communications Manager",
   ];
 
@@ -32,8 +31,7 @@ export function ManagerSection(props: ManagerSectionProps) {
       manager.attributes.Role === "Technical Director" ||
       manager.attributes.Role === "Communications Manager" ||
       manager.attributes.Role === "Finance Manager" ||
-      manager.attributes.Role === "Hardware Workshop Manager" ||
-      manager.attributes.Role === "Software Workshop Manager"
+      manager.attributes.Role === "Workshop Manager" 
   );
 
   let sortedSteeringCommitee: FactoryManager[] = steeringCommitteeTest.sort(

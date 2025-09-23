@@ -83,35 +83,46 @@ export function WeekViewSection(props: WeekViewSectionProps) {
       .filter(
         (manager) =>
           manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Monday"
+          manager.attributes.Office_Hour_Day === "Monday" ||
+          manager.attributes.Office_Hour_Day_2 &&
+          manager.attributes.Office_Hour_Day_2 === "Monday"
+
       )
       .sort(sortByStartTime),
     Tuesday: props.managers
       .filter(
         (manager) =>
           manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Tuesday"
+          manager.attributes.Office_Hour_Day === "Tuesday" ||
+          manager.attributes.Office_Hour_Day_2 &&
+          manager.attributes.Office_Hour_Day_2 === "Tuesday"
       )
       .sort(sortByStartTime),
     Wednesday: props.managers
       .filter(
         (manager) =>
           manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Wednesday"
+          manager.attributes.Office_Hour_Day === "Wednesday" ||
+          manager.attributes.Office_Hour_Day_2 &&
+          manager.attributes.Office_Hour_Day_2 === "Wednesday"
       )
       .sort(sortByStartTime),
     Thursday: props.managers
       .filter(
         (manager) =>
           manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Thursday"
+          manager.attributes.Office_Hour_Day === "Thursday" ||
+          manager.attributes.Office_Hour_Day_2 &&
+          manager.attributes.Office_Hour_Day_2 === "Thursday"
       )
       .sort(sortByStartTime),
     Friday: props.managers
       .filter(
         (manager) =>
           manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Friday"
+          manager.attributes.Office_Hour_Day === "Friday" ||
+            manager.attributes.Office_Hour_Day_2 &&
+          manager.attributes.Office_Hour_Day_2 === "Friday"
       )
       .sort(sortByStartTime),
   };

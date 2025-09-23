@@ -32,6 +32,8 @@ export function ManagerAndLabProvider({ children }: { children: ReactNode }) {
             ...manager.attributes,
             Start_Time: convertTimeStringToDate(manager.attributes.Start_Time),
             End_Time: convertTimeStringToDate(manager.attributes.End_Time),
+            Start_Time_2: convertTimeStringToDate(manager.attributes.Start_Time_2),
+            End_Time_2: convertTimeStringToDate(manager.attributes.End_Time_2),
           },
         }));
         const correctedManagers = correctForDuplicateFirstNames(managersWithDates);
