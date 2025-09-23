@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { LogIn, Menu, X } from "lucide-react"; // Import the X (close) icon
+import { Menu, X } from "lucide-react"; // Import the X (close) icon
 import { useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
 import { NavLink } from "react-router-dom";
@@ -59,18 +59,6 @@ function NavBar(props: NavBarProps) {
     }
   }, [loginContext, navigate]);
 
-  // Handle logout
-  const handleLogout = () => {
-    localStorage.removeItem("token"); // Remove token from localStorage
-    if (loginContext) {
-      loginContext.setLoggedIn(false); // Update login state
-      navigate("/"); // Redirect to homepage
-    }
-  };
-
-  const handleLoginClick = () => {
-    navigate("/login"); // Redirect to login page
-  };
 
   return (
     <>
