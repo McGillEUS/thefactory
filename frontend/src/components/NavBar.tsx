@@ -1,9 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Menu, X } from "lucide-react"; // Import the X (close) icon
-import { useNavigate } from "react-router-dom"; // Use useNavigate for redirection
 import { LoginContext } from "../Contexts/LoginContext";
 import { NavLink } from "react-router-dom";
-import { jwtDecode } from "jwt-decode"; // Import jwt-decode to decode token
 
 type NavBarProps = {
   toggleDrawer: () => void;
@@ -12,12 +10,10 @@ type NavBarProps = {
 
 function NavBar(props: NavBarProps) {
   const loginContext = useContext(LoginContext); // Access LoginContext
-  const navigate = useNavigate(); // Initialize navigate for redirection
   const [status, setStatus] = useState<boolean>();
 
   // Check token validity and update context on component mount
   useEffect(() => {
-    const token = localStorage.getItem("token");
     const apiKey = import.meta.env.VITE_API_KEY; // Access the API key from .env file
 
     fetch("https://factorystrapi.mcgilleus.ca/api/open-status", {
@@ -28,36 +24,12 @@ function NavBar(props: NavBarProps) {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         console.log(data.data.attributes.status);
         setStatus(data.data.attributes.status);
       })
       .catch((error) => console.log(error));
-
-    if (token) {
-      try {
-        // Decode the token and check expiration
-        const decodedToken = jwtDecode<{ exp: number }>(token); // Correct usage of jwtDecode
-        const currentTime = Date.now() / 1000; // Current time in seconds
-
-        if (decodedToken.exp < currentTime) {
-          // Token expired, log out the user
-          localStorage.removeItem("token");
-          loginContext?.setLoggedIn(false); // Update context state
-          navigate("/login"); // Redirect to login page
-        } else {
-          // Token is valid, ensure the user stays logged in
-          loginContext?.setLoggedIn(true);
-        }
-      } catch (error) {
-        console.error("Error decoding token:", error);
-        localStorage.removeItem("token"); // Remove invalid token
-        loginContext?.setLoggedIn(false);
-        navigate("/login"); // Redirect to login
-      }
-    } else {
-      loginContext?.setLoggedIn(false); // No token, user is logged out
-    }
-  }, [loginContext, navigate]);
+  });
 
 
   return (
