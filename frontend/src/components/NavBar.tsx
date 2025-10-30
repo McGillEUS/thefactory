@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Menu, X } from "lucide-react"; // Import the X (close) icon
+import { Menu, X, Copy } from "lucide-react"; // Import the Copy icon
 import { LoginContext } from "../Contexts/LoginContext";
 import { NavLink } from "react-router-dom";
 
@@ -11,6 +11,8 @@ type NavBarProps = {
 function NavBar(props: NavBarProps) {
   const loginContext = useContext(LoginContext); // Access LoginContext
   const [status, setStatus] = useState<boolean>();
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   // Check token validity and update context on component mount
   useEffect(() => {
@@ -31,6 +33,24 @@ function NavBar(props: NavBarProps) {
       .catch((error) => console.log(error));
   });
 
+  const openContactPopup = () => {
+    setContactPopupOpen(true);
+  };
+
+  const closeContactPopup = () => {
+    setContactPopupOpen(false);
+    setCopied(false); // Reset copied state when closing popup
+  };
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText("factory@mcgilleus.ca");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
 
   return (
     <>
@@ -138,20 +158,62 @@ function NavBar(props: NavBarProps) {
         <div className="gap-5 flex items-center">
           <div className="flex items-center gap-2 text-white  decoration-[#57bf94]">
             <button
-              className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green ">
-                 <a
-              href="mailto:thefactory@mcgilleus.ca"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="decoration-[3px]"
+              onClick={openContactPopup}
+              className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green"
             >
               Contact Us
-            </a>
-              
             </button>
           </div>
         </div>
       </nav>
+
+      {/* Contact Us Popup */}
+      {contactPopupOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-96 mx-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold">Contact Us</h3>
+              <button
+                onClick={closeContactPopup}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            <p className="text-gray-700 mb-4">
+              Feel free to reach out to us at:
+            </p>
+            <div className="bg-gray-100 p-3 rounded-md text-center relative"> {/* Added margin-bottom to reserve space */}
+              <p className="text-lg font-mono text-factory-green">
+                factory@mcgilleus.ca
+              </p>
+              <button
+                onClick={copyToClipboard}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-factory-green transition-colors"
+                title="Copy to clipboard"
+              >
+                <Copy size={18} />
+              </button>
+            </div>
+            {/* Fixed height container for feedback message */}
+            <div className="h-3 mb-2 mt-3"> {/* Fixed height container */}
+              {copied && (
+                <p className="text-factory-green text-sm text-center">
+                  Email copied to clipboard!
+                </p>
+              )}
+            </div>
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={closeContactPopup}
+                className="bg-factory-green text-white py-2 px-4 rounded-md hover:bg-factory-dark-green"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

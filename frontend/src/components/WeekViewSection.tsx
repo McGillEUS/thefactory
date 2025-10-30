@@ -14,52 +14,64 @@ const sortByStartTime = (a: FactoryManager, b: FactoryManager) => {
 };
 
 export function WeekViewSection(props: WeekViewSectionProps) {
-  // Process managers to group by day of the week
-  const officeHours: { [key: string]: FactoryManager[] } = {
-    Monday: props.managers
-      .filter(
-        (manager) =>
-          manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Monday" ||
-          manager.attributes.Office_Hour_Day_2 &&
-          manager.attributes.Office_Hour_Day_2 === "Monday"
+  // Create an array that includes managers for both office hour slots
+  const allOfficeHourManagers: FactoryManager[] = [];
 
+  props.managers.forEach(manager => {
+    // Add manager for first office hour slot if it exists
+    if (manager.attributes.Office_Hour_Day && manager.attributes.Start_Time && manager.attributes.End_Time) {
+      allOfficeHourManagers.push({
+        ...manager,
+        attributes: {
+          ...manager.attributes,
+          // Use first slot data
+          Office_Hour_Day: manager.attributes.Office_Hour_Day,
+          Start_Time: manager.attributes.Start_Time,
+          End_Time: manager.attributes.End_Time
+        }
+      });
+    }
+
+    // Add manager for second office hour slot if it exists
+    if (manager.attributes.Office_Hour_Day_2 && manager.attributes.Start_Time_2 && manager.attributes.End_Time_2) {
+      allOfficeHourManagers.push({
+        ...manager,
+        attributes: {
+          ...manager.attributes,
+          // Use second slot data for the main fields
+          Office_Hour_Day: manager.attributes.Office_Hour_Day_2,
+          Start_Time: manager.attributes.Start_Time_2,
+          End_Time: manager.attributes.End_Time_2
+        }
+      });
+    }
+  });
+
+  // Process managers to group by day of the week using the expanded list
+  const officeHours: { [key: string]: FactoryManager[] } = {
+    Monday: allOfficeHourManagers
+      .filter(
+        (manager) => manager.attributes.Office_Hour_Day === "Monday"
       )
       .sort(sortByStartTime),
-    Tuesday: props.managers
+    Tuesday: allOfficeHourManagers
       .filter(
-        (manager) =>
-          manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Tuesday" ||
-          manager.attributes.Office_Hour_Day_2 &&
-          manager.attributes.Office_Hour_Day_2 === "Tuesday"
+        (manager) => manager.attributes.Office_Hour_Day === "Tuesday"
       )
       .sort(sortByStartTime),
-    Wednesday: props.managers
+    Wednesday: allOfficeHourManagers
       .filter(
-        (manager) =>
-          manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Wednesday" ||
-          manager.attributes.Office_Hour_Day_2 &&
-          manager.attributes.Office_Hour_Day_2 === "Wednesday"
+        (manager) => manager.attributes.Office_Hour_Day === "Wednesday"
       )
       .sort(sortByStartTime),
-    Thursday: props.managers
+    Thursday: allOfficeHourManagers
       .filter(
-        (manager) =>
-          manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Thursday" ||
-          manager.attributes.Office_Hour_Day_2 &&
-          manager.attributes.Office_Hour_Day_2 === "Thursday"
+        (manager) => manager.attributes.Office_Hour_Day === "Thursday"
       )
       .sort(sortByStartTime),
-    Friday: props.managers
+    Friday: allOfficeHourManagers
       .filter(
-        (manager) =>
-          manager.attributes.Office_Hour_Day &&
-          manager.attributes.Office_Hour_Day === "Friday" ||
-            manager.attributes.Office_Hour_Day_2 &&
-          manager.attributes.Office_Hour_Day_2 === "Friday"
+        (manager) => manager.attributes.Office_Hour_Day === "Friday"
       )
       .sort(sortByStartTime),
   };
@@ -91,8 +103,6 @@ export function WeekViewSection(props: WeekViewSectionProps) {
           marginBottom: "1rem",
         }}
       />
-
-    
 
       <WeekView
         officeHours={officeHours}

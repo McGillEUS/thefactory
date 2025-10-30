@@ -1,5 +1,4 @@
-import { LogIn } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type NavDrawerProps = {
   toggleDrawer: () => void;
@@ -61,21 +60,17 @@ const NavDrawer = (props: NavDrawerProps) => {
         </NavLink>
       </div>
 
-      <div className="gap-5 flex flex-col items-center">
-        <div className="flex items-center gap-2 text-white">
-          <a
-            href="mailto:thefactory@mcgilleus.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-            
-          >
-            Contact us
-          </a>
-        </div>
-        <button className="bg-factory-green py-2 px-7 rounded-xl text-white flex gap-2 hover:bg-factory-dark-green items-center" onClick={props.toggleDrawer}>
-          <LogIn color="white" />
-          <Link to="/login">Login</Link>
-        </button>
+      <div className="flex flex-col items-center gap-3 w-full px-6">
+        <a
+          href="mailto:thefactory@mcgilleus.ca"
+          className="bg-factory-green hover:bg-factory-dark-green p-4 rounded-xl text-white text-center w-full transition-colors"
+          onClick={props.toggleDrawer}
+        >
+          <p className="text-lg font-medium">Contact Us</p>
+          <p className="text-sm font-mono break-all mt-1">
+            thefactory@mcgilleus.ca
+          </p>
+        </a>
       </div>
     </div>
   );
