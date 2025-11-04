@@ -185,7 +185,7 @@ function NavBar(props: NavBarProps) {
             </p>
             <div className="bg-gray-100 p-3 rounded-md text-center relative"> {/* Added margin-bottom to reserve space */}
               <p className="text-lg font-mono text-factory-green">
-                factory@mcgilleus.ca
+                thefactory@mcgilleus.ca
               </p>
               <button
                 onClick={copyToClipboard}
