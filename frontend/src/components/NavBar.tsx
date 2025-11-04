@@ -44,7 +44,7 @@ function NavBar(props: NavBarProps) {
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText("factory@mcgilleus.ca");
+      await navigator.clipboard.writeText("thefactory@mcgilleus.ca");
       setCopied(true);
       setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
     } catch (err) {
